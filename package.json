@@ -1,7 +1,7 @@
 {
   "name": "uv_mean",
   "version": "1.0.0",
-  "description": "UV ETNA BACHELOR : Learn Mean Basics",
+  "description": "UV ETNA BACHELOR : Learn Mean Basics GROUP theo remi et sam",
   "main": "server.js",
   "scripts": {
     "test": "test",
