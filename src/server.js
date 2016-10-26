@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 
+app.set('view engine', 'jade');
 app.get('/', function(req, res) {
-  res.send("Hello Etna's");
+    res.sendfile('./src/public/index.html')
 });
 
 app.listen(3000, function () {
