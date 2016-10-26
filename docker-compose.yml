@@ -22,6 +22,15 @@ services:
     networks:
       mean-network:
 
+  mongo-express:
+    image: mongo-express
+    container_name: phpmyadmin-mongo
+    ports:
+      - 8080:8081
+    links:
+      - mongo:mongo
+    networks:
+      mean-network:
 volumes:
   mongo-data:
     driver: local
