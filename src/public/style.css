@@ -281,7 +281,7 @@ label:hover:before {
 /*=== 9. Misc ===*/
 .logo {
     padding: 15px 0;
-    font-size: 25px;
+    font-size: 15px;
     color: #aaaaaa;
     font-weight: bold;
 }
@@ -300,4 +300,14 @@ label:hover:before {
     background-color: dimgray;
     width: 100%;
     height: 54.5em;
+}
+
+.pied
+{
+    margin-top: 27em;
+}
+
+.pied p
+{
+    font-size: 0.9em;
 }
