@@ -295,7 +295,7 @@ label:hover:before {
 .bar
 {
     margin-top: 5em;
-    background-image: url("boston.jpg");
+    background-image: url("/lib/images/boston.jpg");
     display: block;
     background-color: dimgray;
     width: 100%;
