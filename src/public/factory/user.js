@@ -1,4 +1,4 @@
-angular.module('myTest').factory('userFactory', ['localStorageService',
+angular.module('BostomApp').factory('userFactory', ['localStorageService',
 	function(localStorageService) {
 		var userEntity = {
 			username: '',
