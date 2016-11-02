@@ -1,13 +1,11 @@
 const express = require('express');
 const app = express();
 var mongoose = require('mongoose');
-
 var Crime = require('./models/crimes');
+const path = require('path');
 
 app.set('view engine', 'jade');
-app.get('/', function(req, res) {
-    res.sendfile('./src/public/index.html')
-});
+app.use("/", express.static(path.join(__dirname, 'public')));
 
 app.get('/api/login', function(req, res) {
     mongoose.connect('mongodb://mongo/mydb/', function(err) {
