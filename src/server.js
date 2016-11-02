@@ -16,16 +16,16 @@ app.get('/api/login', function(req, res) {
         }
         else {
             //res.send('connected');
-            Crime.find({}, function(err, crimes) {
-                if (err) throw err;
-
-                // object of all the users
-                console.log('hello');
-            });
+            Crime.find(function (err, crimes) {
+                if (err) return console.error(err);
+                res.send(crimes);
+            })
         }
         mongoose.connection.close();
     });
 });
+
+
 
 
 app.listen(3000, function () {
