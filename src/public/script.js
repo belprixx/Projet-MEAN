@@ -16,6 +16,11 @@ routeApp.config(function($routeProvider) {
             templateUrl : 'register.html',
             controller  : 'registerController'
         })
+        // route for the display
+        .when('/display', {
+            templateUrl : 'display.html',
+            controller  : 'displayController'
+        })
 
         // route for the about page
         .otherwise({
@@ -35,4 +40,8 @@ routeApp.controller('aboutController', function($scope) {
 
 routeApp.controller('registerController', function($scope) {
     $scope.message = 'Contact us! JK. This is just a demo.';
+});
+
+routeApp.controller('displayController', function($scope) {
+    $scope.message = 'Display is fun';
 });
