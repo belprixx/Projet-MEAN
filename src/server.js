@@ -13,17 +13,30 @@ app.get('/api/login', function(req, res) {
             throw err;
         }
         else {
-            //res.send('connected');
-            Crime.find({} ,function (err, data) {
-                if (err) throw err;
-                res.json(data);
-            });
+            res.send('connected');
         }
     });
     //mongoose.connection.close();
 });
 
 
+app.get('/api/logout', function(req, res) {
+    mongoose.connection.close( function(err) {
+        if (err) {
+            throw err;
+        }
+        else {
+            res.send('disconnected');
+    }
+    });
+});
+
+app.get('/api/showAll', function(req, res) {
+    Crime.find({} ,function (err, data) {
+        if (err) throw err;
+        res.json(data);
+    });
+});
 
 
 app.listen(3000, function () {
