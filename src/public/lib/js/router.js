@@ -6,7 +6,7 @@ routeApp.config(function($routeProvider) {
     $routeProvider
 
     // route for the home page
-        .when('/', {
+        .when('/login', {
             templateUrl : '/view/login.html',
             controller  : 'loginController'
         })
@@ -19,6 +19,6 @@ routeApp.config(function($routeProvider) {
 
         // route for the about page
         .otherwise({
-            redirectTo: '/'
+            redirectTo: '/login'
         });
 });
