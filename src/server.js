@@ -8,19 +8,19 @@ app.set('view engine', 'jade');
 app.use("/", express.static(path.join(__dirname, 'public')));
 
 app.get('/api/login', function(req, res) {
-    mongoose.connect('mongodb://mongo/mydb/', function(err) {
+    mongoose.connect('mongodb://mongo/mydb', function(err) {
         if (err) {
             throw err;
         }
         else {
             //res.send('connected');
-            Crime.find(function (err, crimes) {
-                if (err) return console.error(err);
-                res.send(crimes);
-            })
+            Crime.find({} ,function (err, data) {
+                if (err) throw err;
+                res.json(data);
+            });
         }
-        mongoose.connection.close();
     });
+    //mongoose.connection.close();
 });
 
 
