@@ -30,12 +30,31 @@ app.get('/api/showAll', function(req, res) {
 
 
 //Chercher par date
-app.get('/api/showByDate', function(req, res) {
-    Crime.find({} ,function (err, data) {
+
+var crimeKey = "fromdate";
+var crimeValue= "2015-05-12T00:10:00";
+var query = {};
+query[crimeKey] = crimeValue;
+
+app.get('/api/search', function(req, res) {
+    Crime.find(query ,function (err, data) {
         if (err) throw err;
         res.json(data);
     });
 });
+
+//Chercher et supprimer
+
+var crimeKey = "compnos";
+var crimeValue= "152038711";
+var query = {};
+query[crimeKey] = crimeValue;
+
+app.get('/api/delete', function(req, res) {
+    Crime.find(query).remove().exec();
+});
+
+//Chercher et updater
 
 
 //Deconnexion
