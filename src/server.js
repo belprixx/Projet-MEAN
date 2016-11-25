@@ -32,7 +32,6 @@ app.get('/api/showAll', function(req, res) {
     });
 });
 
-
 //Chercher
 
 //var crimeKey = "fromdate";
@@ -52,10 +51,11 @@ app.get('/api/search', function(req, res) {
 
 app.get('/api/delete', function(req, res) {
     Crime.find(query).remove().exec();
+    res.send('Deleted');
 });
 
 //Créer
-
+/*
 var test = new Crime({
     compnos: '123456789',
     naturecode: 'testnaturecode',
@@ -81,11 +81,10 @@ var test = new Crime({
 app.get('/api/add', function(req, res) {
     test.save(function (err, test) {
         if (err) return console.error(err);
-        console.dir(test);
+        res.send(test);
     });
 });
-
-
+*/
 //Chercher et updater
 
 
