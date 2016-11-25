@@ -29,7 +29,7 @@ app.get('/api/showAll', function(req, res) {
 });
 
 
-//Chercher par date
+//Chercher
 
 var crimeKey = "fromdate";
 var crimeValue= "2015-05-12T00:10:00";
