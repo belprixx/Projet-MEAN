@@ -10,7 +10,7 @@ routeApp.config(function($routeProvider) {
           controller : 'homeController'
         })
     // route for the login page
-        .when('/login', {
+        .when('/user/login', {
             templateUrl : '/view/login.html',
             controller  : 'loginController'
         })
@@ -30,13 +30,11 @@ routeApp.config(function($routeProvider) {
         });
 }).run(['$rootScope', 'localStorageService', '$location', 'userFactory',
     function($rootScope, localStorageService, $location, userFactory) {
-        $rootScope.$on('$routeChangeStart', function(event) {
-            if (!userFactory.isSignedIn()){
-                  $location.path('/login');
-            }
-            else {
-              $location.path('/');
-            }
-        });
+      $rootScope.$on('$routeChangeStart', function(event) {
+          if (!userFactory.isSignedIn())
+              $location.path('/user/login');
+          else if ($location.path() == '/user/login')
+              event.preventDefault();
+      });
     }
 ]);

@@ -15,7 +15,7 @@
     <header ng-controller="headerController">
         {{hello}}
         <a href="#/">Home</a>
-        <a href="#/login" ng-if="!connected">Login</a>
+        <a href="#/user/login" ng-if="!connected">Login</a>
         <a href="#/user/logout" ng-if="connected">Logout</a>
     </header>
 
@@ -41,10 +41,10 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.5.0/angular-local-storage.min.js"></script>
             <script src="/lib/js/router.js"></script>
             <script src="/factory/user.js"></script>
+            <script src="/controller/logoutController.js"></script>
             <script src="/controller/loginController.js"></script>
             <script src="/controller/homeController.js"></script>
             <script src="/controller/headerController.js"></script>
-            <script src "/controller/logoutController.js"></script>
             <script src="/lib/js/js.js"></script>
 </body>
 

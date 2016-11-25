@@ -27,7 +27,6 @@ angular.module('BostonApp').factory('userFactory', ['localStorageService',
 		};
 
 		userEntity.logout = function() {
-			console.log(userEntity);
 			userEntity.logged = false;
 			localStorageService.set('user', {
 				username: userEntity.username,
