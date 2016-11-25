@@ -9,7 +9,7 @@ $(document).keydown(function(e) {
     $(document).unbind('keydown',arguments.callee);
 
     // do something awesome
-    console.log("CC");
+    console.log("CC"); 
 
   }
 

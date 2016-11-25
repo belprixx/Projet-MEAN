@@ -5,17 +5,22 @@ var routeApp = angular.module('BostomApp', ['ngRoute']);
 routeApp.config(function($routeProvider) {
     $routeProvider
 
-    // route for the home page
+        // route for the login page
         .when('/login', {
             templateUrl : '/view/login.html',
             controller  : 'loginController'
         })
 
-        // route for the contact page
+        // route for the register page
         .when('/register', {
             templateUrl : '/view/register.html',
             controller  : 'registerController'
         })
+
+        .when('/home', {
+            templateUrl : '/view/home.html',
+            controller  : 'homeController'
+        })   
 
         // route for the about page
         .otherwise({

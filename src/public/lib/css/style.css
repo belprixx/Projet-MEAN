@@ -279,6 +279,8 @@ label:hover:before {
     line-height: 25px;
 }
 /*=== 9. Misc ===*/
+
+
 .logo {
     padding: 15px 0;
     font-size: 15px;
@@ -310,4 +312,18 @@ label:hover:before {
 .pied p
 {
     font-size: 0.9em;
+}
+
+.logo_home
+{
+    margin-top: -3em;
+}
+
+.home
+{
+    background-color: white;
+    width: 118em;
+    height: 43em;
+    margin: auto;
+    margin-top: 1.5em;
 }
