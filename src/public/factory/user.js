@@ -1,4 +1,4 @@
-angular.module('BostomApp').factory('userFactory', ['localStorageService',
+angular.module('BostonApp').factory('userFactory', ['localStorageService',
 	function(localStorageService) {
 		var userEntity = {
 			username: '',
@@ -27,6 +27,7 @@ angular.module('BostomApp').factory('userFactory', ['localStorageService',
 		};
 
 		userEntity.logout = function() {
+			console.log(userEntity);
 			userEntity.logged = false;
 			localStorageService.set('user', {
 				username: userEntity.username,
