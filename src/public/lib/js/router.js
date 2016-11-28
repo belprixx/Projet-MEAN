@@ -32,6 +32,13 @@ routeApp.config(function($routeProvider) {
             template: '',
             controller: 'logoutController'
         })
+
+        // route for search
+        .when('/user/search', {
+          templateUrl : '/view/search.html',
+          controller : 'searchController'
+        })
+
         // route for the home page
         .otherwise({
             redirectTo: '/'
