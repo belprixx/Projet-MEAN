@@ -19,6 +19,8 @@ routeApp.config(function($routeProvider) {
             templateUrl : '/view/register.html',
             controller  : 'registerController'
         })
+<<<<<<< HEAD
+=======
 
         .when('/home', {
             templateUrl : '/view/home.html',
@@ -27,11 +29,14 @@ routeApp.config(function($routeProvider) {
 
         // route for the about page
 
+>>>>>>> 96afc8e1ecdf9e094c173ec7da823856bfd39afe
         // route for the logout page
         .when('/user/logout', {
             template: '',
             controller: 'logoutController'
         })
+<<<<<<< HEAD
+=======
 
         // route for search
         .when('/user/search', {
@@ -39,6 +44,7 @@ routeApp.config(function($routeProvider) {
           controller : 'searchController'
         })
 
+>>>>>>> 96afc8e1ecdf9e094c173ec7da823856bfd39afe
         // route for the home page
         .otherwise({
             redirectTo: '/'
