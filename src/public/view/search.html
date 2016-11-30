@@ -3,6 +3,29 @@
   <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
 <nav class="navbar navbar-default" role="navigation">
  <div class="container-fluid">
+     <select>
+         <option>ID</option>
+         <option>COMPNOS</option>
+         <option>NATURECODE</option>
+         <option>INCIDENTS</option>
+         <option>CRIME CODE</option>
+         <option>DISTRICT</option>
+         <option>AREA</option>
+         <option>DATE</option>
+         <option>WEAPON</option>
+         <option>SHOOTING</option>
+         <option>DOMESTIC</option>
+         <option>SHIFT</option>
+         <option>YEAR</option>
+         <option>MONTH</option>
+         <option>DAY_WEEK</option>
+         <option>UCRPART</option>
+         <option>X</option>
+         <option>Y</option>
+         <option>STREETNAME</option>
+         <option>XSTREETNAME</option>
+         <option>LOCATION</option>
+     </select>
    <!-- Collect the nav links, forms, and other content for toggling -->
 <!--   <div class="collapse navbar-collapse" id="everyday-navbar-collapse">
      <ul class="nav nav-pills">
@@ -15,8 +38,58 @@
 </nav>
 </header>
 
-  <div ng-repeat="item in filtereditems">Item {{item}}</div>
-
+    <table class="table_crime">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>COMPNOS</th>
+                <th>NATURE CODE</th>
+                <th>INCIDENTS</th>
+                <th>CRIME CODE</th>
+                <th>DISTRICT</th>
+                <th>AREA</th>
+                <th>DATE</th>
+                <th>WEAPON</th>
+                <th>SHOOTING</th>
+                <th>DOMESTIC</th>
+                <th>SHIFT</th>
+                <th>YEAR</th>
+                <th>MONTH</th>
+                <th>DAY_WEEK</th>
+                <th>UCRPART</th>
+                <th>X</th>
+                <th>Y</th>
+                <th>STREETNAME</th>
+                <th>XSTREETNAME</th>
+                <th>LOCATION</th>
+            </tr>
+        </thead>
+        <tbody>
+              <tr ng-repeat="item in filtereditems">
+                  <td>{{item._id}}</td>
+                  <td>{{item.compnos}}</td>
+                  <td>{{item.naturecode}}</td>
+                  <td>{{item.incident_type_description}}</td>
+                  <td>{{item.main_crimecode}}</td>
+                  <td>{{item.reptdistrict}}</td>
+                  <td>{{item.reportingarea}}</td>
+                  <td>{{item.fromdate}}</td>
+                  <td>{{item.weapontype}}</td>
+                  <td>{{item.shooting}}</td>
+                  <td>{{item.domestic}}</td>
+                  <td>{{item.shift}}</td>
+                  <td>{{item.year}}</td>
+                  <td>{{item.month}}</td>
+                  <td>{{item.day_week}}</td>
+                  <td>{{item.ucrpart}}</td>
+                  <td>{{item.x}}</td>
+                  <td>{{item.y}}</td>
+                  <td>{{item.streetname}}</td>
+                  <td>{{item.xstreetname}}</td>
+                  <td>{{item.location}}</td>
+              </tr>
+        </tbody>
+    </table>
 
 <div class="container">
     <div class="row">

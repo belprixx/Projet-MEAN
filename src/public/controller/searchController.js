@@ -1,10 +1,14 @@
-angular.module('BostonApp').controller('searchController', function ($scope, $log) {
+angular.module('BostonApp').controller('searchController', function ($scope, $http) {
 
-	 $scope.items = _.range(1,151);
+	var test = "";
 
+	$http.get("/api/showAll")
+		.then(function(response) {
+			test = response.data;
+	$scope.items = test;
 	$scope.maxSize = 5;
 	$scope.bigTotalItems =  $scope.items.length;
-	$scope.CurrentPage = 1;
+	//$scope.CurrentPage = 1;
 	$scope.itemsPerPage = 10;
 	$scope.currentPage = 1;
 
@@ -18,4 +22,5 @@ angular.module('BostonApp').controller('searchController', function ($scope, $lo
 
 		$scope.filtereditems = $scope.items.slice(begin, end);
 	});
+		});
 });

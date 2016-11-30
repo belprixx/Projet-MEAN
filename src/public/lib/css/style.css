@@ -518,3 +518,28 @@ float:right;
 
 
 .table-responsive {height:180px;}
+
+
+.table_crime
+{
+    margin: auto;
+    background-color: white;
+    color: red;
+    width: 100%;
+    height: auto;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+
+}
+tr,td, th
+{
+    border-style: solid;
+    border-color: black;
+}
+
+th
+{
+    padding: 5px;
+}
