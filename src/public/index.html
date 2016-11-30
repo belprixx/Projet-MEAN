@@ -2,7 +2,7 @@
 <html ng-app="BostonApp">
 
 <head>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="/lib/css/style.css">
 
@@ -18,7 +18,7 @@
                     <div ng-view></div>
                 </div>
             </div>
-
+</div>
             <footer class="text-center">
                 <div class="pied">
                     <p>Boston Police Interface</p>
@@ -26,12 +26,11 @@
                     <p>Powered by Rémi MARCHAL, Samuel THOMAS, Théo TISON Projet MEAN: Boston Police App</p>
                 </div>
             </footer>
-
-            <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
             <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
             <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.5.0/angular-local-storage.min.js"></script>
-            <script src= "../public/lib/js/ui-bootstrap-tpls-2.3.0.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+            <script src= "/lib/js/ui-bootstrap-tpls-2.3.0.min.js"></script>
             <script src="/lib/js/router.js"></script>
             <script src="/factory/user.js"></script>
             <script src="/factory/nav_com.js"></script>
@@ -39,8 +38,7 @@
             <script src="/controller/loginController.js"></script>
             <script src="/controller/homeController.js"></script>
             <script src="/controller/headerController.js"></script>
-            <script src="/lib/js/js.js"></script>
-            <script src="/lib/js/search.js"></script>
+            <script src="./controller/searchController.js"></script>
 
 </body>
 
