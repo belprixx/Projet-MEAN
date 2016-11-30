@@ -41,7 +41,8 @@ app.post('/api/search', function(req, res) {
 
 //Chercher et supprimer
 
-app.get('/api/delete', function(req, res) {
+app.post('/api/delete', function(req, res) {
+    var query = req.body;
     Crime.find(query).remove().exec();
     res.send('Deleted');
 });
