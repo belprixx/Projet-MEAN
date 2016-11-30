@@ -11,14 +11,6 @@
 <!-- define angular controller -->
 
 <body>
-
-    <header ng-controller="headerController">
-        {{hello}}
-        <a href="#/">Home</a>
-        <a href="#/user/login" ng-if="!connected">Login</a>
-        <a href="#/user/logout" ng-if="connected">Logout</a>
-    </header>
-
     <div class="bar">
         <div class="centrage">
             <div class="text-center" style="padding:50px 0">
@@ -41,11 +33,14 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.5.0/angular-local-storage.min.js"></script>
             <script src="/lib/js/router.js"></script>
             <script src="/factory/user.js"></script>
+            <script src="/factory/nav_com.js"></script>
             <script src="/controller/logoutController.js"></script>
             <script src="/controller/loginController.js"></script>
             <script src="/controller/homeController.js"></script>
             <script src="/controller/headerController.js"></script>
             <script src="/lib/js/js.js"></script>
+            <script src="/lib/js/search.js"></script>
+
 </body>
 
 </html>

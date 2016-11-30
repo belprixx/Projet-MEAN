@@ -19,11 +19,26 @@ routeApp.config(function($routeProvider) {
             templateUrl : '/view/register.html',
             controller  : 'registerController'
         })
+
+        .when('/home', {
+            templateUrl : '/view/home.html',
+            controller  : 'homeController'
+        })
+
+        // route for the about page
+
         // route for the logout page
         .when('/user/logout', {
             template: '',
             controller: 'logoutController'
         })
+
+        // route for search
+        .when('/user/search', {
+          templateUrl : '/view/search.html',
+          controller : 'searchController'
+        })
+
         // route for the home page
         .otherwise({
             redirectTo: '/'
