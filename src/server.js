@@ -5,10 +5,6 @@ var bodyParser = require('body-parser');
 var Crime = require('./models/crimes');
 const path = require('path');
 
-var crimeKey = "compnos";
-var crimeValue= "152038707";
-var query = {};
-query[crimeKey] = crimeValue;
 
 app.set('view engine', 'jade');
 app.use("/", express.static(path.join(__dirname, 'public')));
@@ -35,7 +31,8 @@ app.get('/api/showAll', function(req, res) {
 
 //Chercher
 
-app.get('/api/search', function(req, res) {
+app.post('/api/search', function(req, res) {
+    var query = req.body;
     Crime.find(query ,function (err, data) {
         if (err) throw err;
         res.json(data);
