@@ -1,5 +1,5 @@
 // create the module and name it routeApp
-var routeApp = angular.module('BostonApp', ['ngRoute','LocalStorageModule']);
+var routeApp = angular.module('BostonApp', ['ngRoute','LocalStorageModule', 'ui.bootstrap']);
 
 // configure our routes
 routeApp.config(function($routeProvider) {
