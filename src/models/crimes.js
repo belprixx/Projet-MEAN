@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var crimeSchema = new Schema({
-    _id: Schema.Types.ObjectId,
     compnos: Number,
     naturecode: String,
     incident_type_description: { type: String, required: true, unique: false },
