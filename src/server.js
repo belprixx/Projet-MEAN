@@ -80,13 +80,52 @@ app.post('/api/add', function(req, res) {
             res.send(err);
         }
         else {
-            res.json({message: "YOLO"});
+            res.json({message: "Crime added"});
         }
     });
 });
 
-//Chercher et updater
+//Updater
 
+app.post('/api/update', function(req, res) {
+    Crime.findById(req.body._id, function(err, crime) {
+        if (err){
+            console.log(err);
+            res.send(err);
+        }
+        crime.compnos = req.body.compnos || crime.compnos;
+        crime.naturecode = req.body.naturecode || crime.naturecode;
+        crime.incident_type_description = req.body.incident_type_description || crime.incident_type_description;
+        crime.main_crimecode = req.body.main_crimecode || crime.main_crimecode;
+        crime.reptdistrict = req.body.repdistrict || crime.reptdistrict;
+        crime.reportingarea = req.body.reportingarea || crime.reportingarea;
+        crime.fromdate = req.body.fromdate || crime.fromdate;
+        crime.weapontype = req.body.weapontype || crime.weapontype;
+        crime.shooting = req.body.shooting || crime.shooting;
+        crime.domestic = req.body.domestic || crime.domestic;
+        crime.shift = req.body.shift || crime.shift;
+        crime.year = req.body.year || crime.year;
+        crime.month = req.body.month || crime.month;
+        crime.day_week = req.body.day_week || crime.day_week;
+        crime.ucrpart = req.body.ucrpart || crime.ucrpart;
+        crime.x = req.body.x || crime.x;
+        crime.y = req.body.y || crime.y;
+        crime.streetname = req.body.streetname || crime.streetname;
+        crime.xstreetname = req.body.xstreetname || crime.xstreetname;
+        crime.location = req.body.location || crime.location;
+        
+        crime.save(function(err) {
+            if (err){
+                console.log(err);
+                res.send(err);
+            }
+            else {
+                res.json({message: "Crime updated"});
+                console.log('User successfully updated!');
+            }
+        });
+    });
+});
 
 //Deconnexion
 app.get('/api/logout', function(req, res) {
