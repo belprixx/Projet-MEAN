@@ -579,5 +579,47 @@ th
 
 .field_crimes
 {
-    background-color: white;
+    background-color: ;
+    overflow-y: scroll;
+}
+.block1
+{
+  position: relative;
+
+}
+
+.block1
+{
+  position: relative;
+  top: 0px;
+  left: 20px;
+  background-color: yellow;
+  width: 500px;
+}
+
+.block2
+{
+  position: relative;
+  top: -250px;
+  left: 36em;
+  background-color: blue;
+  width: 500px;
+}
+
+.block3
+{
+  position: relative;
+  bottom: -20px;
+  left: 20px;
+  background-color: green;
+  width: 500px;
+}
+
+.block4
+{
+  position: relative;
+  bottom: -20px;
+  left: 36em;
+  background-color: grey;
+  width: 500px;
 }
