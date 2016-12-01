@@ -523,7 +523,7 @@ float:right;
     margin: auto;
 }
 
-
+/*    PAGE SEARCH   */
 .table_crime
 {
     font-size: 12px;
@@ -550,6 +550,8 @@ th
     padding: 5px;
 }
 
+
+/*    PAGE USERS    */
 .table_users
 {
   margin-top: 25px;
@@ -571,4 +573,11 @@ th
 {
   border-style: solid;
   background-color:  #fffaf0;
+}
+
+/*    PAGE CRIME    */
+
+.field_crimes
+{
+    background-color: white;
 }

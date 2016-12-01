@@ -41,6 +41,11 @@ routeApp.config(function($routeProvider) {
           templateUrl : '/view/search.html',
           controller : 'searchController'
         })
+        // route for crimes
+        .when('/user/crimes', {
+          templateUrl : '/view/crimes.html',
+          controller : 'crimesController'
+        })
         // route for the home page
         .otherwise({
             redirectTo: '/'
