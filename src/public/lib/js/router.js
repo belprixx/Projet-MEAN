@@ -32,6 +32,10 @@ routeApp.config(function($routeProvider) {
             template: '',
             controller: 'logoutController'
         })
+        .when('/user/users', {
+          templateUrl : '/view/users.html',
+          controller : 'usersController'
+        })
         // route for search
         .when('/user/search', {
           templateUrl : '/view/search.html',

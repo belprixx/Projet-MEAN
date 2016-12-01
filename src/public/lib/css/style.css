@@ -282,7 +282,6 @@ label:hover:before {
 .logo {
     padding: 15px 0;
     font-size: 15px;
-    color: #aaaaaa;
     font-weight: bold;
 }
 
@@ -530,22 +529,46 @@ float:right;
     font-size: 12px;
     margin: auto;
     background-color: white;
-    color: red;
+    color: black;
     width: 100%;
     height: auto;
-    border-color: black;
     border-style: solid;
     border-width: 2px;
     padding: 5px;
 
 }
-tr,td, th
+.table_crime > thead > tr > th
 {
+    border-color: purple;
     border-style: solid;
-    border-color: black;
+
 }
+
 
 th
 {
     padding: 5px;
+}
+
+.table_users
+{
+  margin-top: 25px;
+  background-color:  #fefefa;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  border-color: red;
+  border-style: solid;
+
+}
+
+.table_users > thead > tr >th
+{
+  border-style: solid;
+  background-color:  #fffaf0;
+}
+.table_users > tbody > tr >td
+{
+  border-style: solid;
+  background-color:  #fffaf0;
 }

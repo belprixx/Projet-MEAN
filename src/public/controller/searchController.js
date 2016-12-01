@@ -1,5 +1,7 @@
 angular.module('BostonApp').controller('searchController', function ($scope, $http) {
 
+	console.log("search marche");
+
 	var test = "";
 
 	$http.get("/api/showAll")
