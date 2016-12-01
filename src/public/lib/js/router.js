@@ -15,7 +15,7 @@ routeApp.config(function($routeProvider) {
             controller  : 'loginController'
         })
         // route for the register page
-        .when('/register', {
+        .when('/user/register', {
             templateUrl : '/view/register.html',
             controller  : 'registerController'
         })

@@ -579,47 +579,67 @@ th
 
 .field_crimes
 {
-    background-color: ;
-    overflow-y: scroll;
-}
-.block1
-{
-  position: relative;
 
 }
 
 .block1
 {
-  position: relative;
-  top: 0px;
-  left: 20px;
-  background-color: yellow;
+  position: absolute;
+ margin-left: 12em;
+  background-color: white;
   width: 500px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 4%;
+    font-size: 12px;
 }
 
 .block2
 {
-  position: relative;
-  top: -250px;
-  left: 36em;
-  background-color: blue;
+  position: absolute;
+  margin-left: 80em;
+  background-color: white;
   width: 500px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 4%;
+    font-size: 12px;
 }
 
 .block3
 {
-  position: relative;
-  bottom: -20px;
-  left: 20px;
-  background-color: green;
+  position: absolute;
+    margin-left: 12em;
+  margin-top: 23em;
+  background-color: white;
   width: 500px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 4%;
+    font-size: 12px;
 }
 
 .block4
 {
-  position: relative;
-  bottom: -20px;
-  left: 36em;
-  background-color: grey;
+  position: absolute;
+    margin-left: 80em;
+    margin-top: 23em;
+  background-color: white;
   width: 500px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 4%;
+    font-size: 12px;
+}
+
+.block5
+{
+    position: absolute;
+    margin-left: 51em;
+    margin-top: 32em;
+}
+
+.all_blocks
+{
+    margin-left: 7.5em;
 }
