@@ -2,27 +2,19 @@ angular.module('BostonApp').controller('loginController', function($scope, userF
 	$scope.submitForm = function(form) {
 			if (form.$valid) {
 				var data = $.param({
-					      username: $scope.userName,
+                username: $scope.userName,
                 password: $scope.userPassword
             });
-				var config = {
-            headers : {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-              }
-        }
-
-				$http.post('/api/userTEST', data, config)
-				.then(
+				$http({
+				    url: "/api/userTEST", method: 'POST',
+				    data: data,
+				    headers : {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
+				}).then(
 						function(response){
-							console.log(response);
-								var PostDataResponse = response;
-								console.log(PostDataResponse[0]);
-								var login = userFactory.setUsername(PostDataResponse[0].username, PostDataResponse[0].roles).login();
-										$location.url('/');
-					 });
-					userFactory.setUsername($scope.userName).login();
-				var login = userFactory.setUsername($scope.userName).login();
-					$location.url('/');
+							var login = userFactory.setUsername(response.data.username, response.data.roles).login();
+							$location.url('/');
+						}
+				);
 			} else {
 					alert('Invalide');
 			}
