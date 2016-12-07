@@ -20,7 +20,6 @@ mongoose.connect('mongodb://mongo/mydb', function(err) {
     }
 });
 
-<<<<<<< HEAD
 
 // get User TEST
 app.post('/api/userTEST', function(req, res){
@@ -31,9 +30,6 @@ app.post('/api/userTEST', function(req, res){
   });
 });
 
-
-=======
->>>>>>> 785251d095a99c458d4da8e4b94cc91585ba1c65
 //Tout afficher
 app.get('/api/showAll', function(req, res) {
     Crime.find({} ,function (err, data) {
