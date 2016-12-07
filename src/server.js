@@ -20,9 +20,8 @@ mongoose.connect('mongodb://mongo/mydb', function(err) {
     }
 });
 
-// get User TEST
-app.post('/api/userTEST', function(req, res){
-  console.log(req.body);
+// get User Connect
+app.post('/api/userConnect', function(req, res){
   User.findOne({"username": req.body.username, "password": req.body.password},function (err, data){
     if (err) console.log(err);
     res.json(data);

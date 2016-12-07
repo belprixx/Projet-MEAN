@@ -6,7 +6,7 @@ angular.module('BostonApp').controller('loginController', function($scope, userF
                 password: $scope.userPassword
             });
 				$http({
-				    url: "/api/userTEST", method: 'POST',
+				    url: "/api/userConnect", method: 'POST',
 				    data: data,
 				    headers : {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
 				}).then(
