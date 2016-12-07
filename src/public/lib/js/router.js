@@ -49,11 +49,12 @@ routeApp.config(function($routeProvider) {
         });
 }).run(['$rootScope', 'localStorageService', '$location', 'userFactory',
     function($rootScope, localStorageService, $location, userFactory) {
-      $rootScope.$on('$routeChangeStart', function(event) {
-          if($location.path() == "/register")
-              $location.url('/register');
-          else if ($location.path() == '/user/login' | !userFactory.isSignedIn())
-              $location.path('/user/login');
-      });
+        $rootScope.$on('$routeChangeStart', function(event) {
+          console.log(!userFactory.isSignedIn());
+            if (!userFactory.isSignedIn())
+                $location.path('/user/login');
+            else if ($location.path() == '/user/login')
+                event.preventDefault();
+        });
     }
 ]);
