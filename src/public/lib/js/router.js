@@ -19,18 +19,15 @@ routeApp.config(function($routeProvider) {
             templateUrl : '/view/register.html',
             controller  : 'registerController'
         })
-
         .when('/home', {
             templateUrl : '/view/home.html',
             controller  : 'homeController'
         })
-
         // route for the logout page
         .when('/user/logout', {
             template: '',
             controller: 'logoutController'
         })
-
         .when('/user/users', {
           templateUrl : '/view/users.html',
           controller : 'usersController'
@@ -53,10 +50,10 @@ routeApp.config(function($routeProvider) {
 }).run(['$rootScope', 'localStorageService', '$location', 'userFactory',
     function($rootScope, localStorageService, $location, userFactory) {
       $rootScope.$on('$routeChangeStart', function(event) {
-          if (!userFactory.isSignedIn())
+          if($location.path() == "/register")
+              $location.url('/register');
+          else if ($location.path() == '/user/login' | !userFactory.isSignedIn())
               $location.path('/user/login');
-          else if ($location.path() == '/user/login')
-              event.preventDefault();
       });
     }
 ]);

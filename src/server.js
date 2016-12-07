@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var Crime = require('./models/crimes');
 const path = require('path');
-
+var User = require('./models/users');
 
 app.set('view engine', 'jade');
 app.use("/", express.static(path.join(__dirname, 'public')));
@@ -20,6 +20,20 @@ mongoose.connect('mongodb://mongo/mydb', function(err) {
     }
 });
 
+<<<<<<< HEAD
+
+// get User TEST
+app.post('/api/userTEST', function(req, res){
+  console.log(req.body);
+  User.findOne({"username": req.body.username, "password": req.body.password},function (err, data){
+    if (err) console.log(err);
+    res.json(data);
+  });
+});
+
+
+=======
+>>>>>>> 785251d095a99c458d4da8e4b94cc91585ba1c65
 //Tout afficher
 app.get('/api/showAll', function(req, res) {
     Crime.find({} ,function (err, data) {
@@ -110,7 +124,7 @@ app.post('/api/update', function(req, res) {
         crime.streetname = req.body.streetname || crime.streetname;
         crime.xstreetname = req.body.xstreetname || crime.xstreetname;
         crime.location = req.body.location || crime.location;
-        
+
         crime.save(function(err) {
             if (err){
                 console.log(err);
@@ -139,4 +153,3 @@ app.get('/api/logout', function(req, res) {
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
-

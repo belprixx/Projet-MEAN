@@ -2,6 +2,7 @@ angular.module('BostonApp').factory('userFactory', ['localStorageService',
 	function(localStorageService) {
 		var userEntity = {
 			username: '',
+			userRole: '',
 			logged: false
 		};
 
@@ -21,6 +22,7 @@ angular.module('BostonApp').factory('userFactory', ['localStorageService',
 			userEntity.logged = true;
 			localStorageService.set('user', {
 				username: userEntity.username,
+				userRole: userEntity.userRole,
 				logged: true
 			});
 			return userEntity;
@@ -30,6 +32,7 @@ angular.module('BostonApp').factory('userFactory', ['localStorageService',
 			userEntity.logged = false;
 			localStorageService.set('user', {
 				username: userEntity.username,
+				userRole: userEntity.userRole,
 				logged: false
 			});
 			return userEntity;
@@ -43,10 +46,13 @@ angular.module('BostonApp').factory('userFactory', ['localStorageService',
 			return userEntity.username;
 		};
 
-		userEntity.setUsername = function(username) {
+		userEntity.setUsername = function(username, user_role) {
+			console.log(user_role);
 			userEntity.username = username;
+			userEntity.userRole = user_role;
 			localStorageService.set('user', {
 				username: username,
+				userRole: user_role,
 				logged: userEntity.logged
 			});
 			return userEntity;
