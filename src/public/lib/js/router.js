@@ -19,32 +19,17 @@ routeApp.config(function($routeProvider) {
             templateUrl : '/view/register.html',
             controller  : 'registerController'
         })
-<<<<<<< HEAD
-=======
-
-        .when('/home', {
-            templateUrl : '/view/home.html',
-            controller  : 'homeController'
-        })
-
-        // route for the about page
-
->>>>>>> 96afc8e1ecdf9e094c173ec7da823856bfd39afe
         // route for the logout page
         .when('/user/logout', {
             template: '',
             controller: 'logoutController'
         })
-<<<<<<< HEAD
-=======
 
         // route for search
         .when('/user/search', {
           templateUrl : '/view/search.html',
           controller : 'searchController'
         })
-
->>>>>>> 96afc8e1ecdf9e094c173ec7da823856bfd39afe
         // route for the home page
         .otherwise({
             redirectTo: '/'
@@ -52,10 +37,10 @@ routeApp.config(function($routeProvider) {
 }).run(['$rootScope', 'localStorageService', '$location', 'userFactory',
     function($rootScope, localStorageService, $location, userFactory) {
       $rootScope.$on('$routeChangeStart', function(event) {
-          if (!userFactory.isSignedIn())
+          if($location.path() == "/register")
+              $location.url('/register');
+          else if ($location.path() == '/user/login' | !userFactory.isSignedIn())
               $location.path('/user/login');
-          else if ($location.path() == '/user/login')
-              event.preventDefault();
       });
     }
 ]);
