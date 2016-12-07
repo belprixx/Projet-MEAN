@@ -1,6 +1,7 @@
 
-<div>
-    <select>
+
+    <div>
+    <select class="search_select">
         <option>ALL</option>
         <option>ID</option>
         <option>COMPNOS</option>
@@ -24,7 +25,12 @@
         <option>XSTREETNAME</option>
         <option>LOCATION</option>
     </select>
-
+    <form class="search_input" action="">
+        <input type="text" placeholder="value">
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+    <div>
     <div class="table-responsive">
     <table class="table_crime">
         <thead>
@@ -61,6 +67,7 @@
                           <button type="submit" class="btn btn-danger">
                               <span class="glyphicon glyphicon-trash"></span>
                           </button>
+                          </form>
                   </td>
                   <td>{{item.compnos}}</td>
                   <td>{{item.naturecode}}</td>
