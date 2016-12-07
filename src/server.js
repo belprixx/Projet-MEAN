@@ -29,6 +29,14 @@ app.post('/api/userTEST', function(req, res){
   });
 });
 
+// get User List
+app.get('/api/userList', function(req, res){
+   User.find({}, function(err, data){
+     if(err) console.log(err);
+       res.json(data);
+   });
+});
+
 //Tout afficher
 app.get('/api/showAll', function(req, res) {
     Crime.find({} ,function (err, data) {

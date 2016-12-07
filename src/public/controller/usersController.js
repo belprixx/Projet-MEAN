@@ -1,3 +1,11 @@
 angular.module('BostonApp').controller('usersController', function ($scope, $http) {
-  console.log("users marche");
+  $http({
+    url: "/api/userList", method: 'GET',
+    data: "",
+    headers : {}
+  }).then(
+      function(response){
+        $scope.userList = response.data;
+      }
+  );
 });
