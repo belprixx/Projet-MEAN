@@ -15,20 +15,33 @@ routeApp.config(function($routeProvider) {
             controller  : 'loginController'
         })
         // route for the register page
-        .when('/register', {
+        .when('/user/register', {
             templateUrl : '/view/register.html',
             controller  : 'registerController'
+        })
+        .when('/home', {
+            templateUrl : '/view/home.html',
+            controller  : 'homeController'
         })
         // route for the logout page
         .when('/user/logout', {
             template: '',
             controller: 'logoutController'
         })
+        .when('/user/users', {
+          templateUrl : '/view/users.html',
+          controller : 'usersController'
+        })
 
         // route for search
         .when('/user/search', {
           templateUrl : '/view/search.html',
           controller : 'searchController'
+        })
+        // route for crimes
+        .when('/user/crimes', {
+          templateUrl : '/view/crimes.html',
+          controller : 'crimesController'
         })
         // route for the home page
         .otherwise({
