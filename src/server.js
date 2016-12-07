@@ -23,7 +23,6 @@ mongoose.connect('mongodb://mongo/mydb', function(err) {
 
 //Tout afficher
 app.get('/api/showAll', function(req, res) {
-    console.log("cc");
     Crime.find({} ,function (err, data) {
         if (err) throw err;
         res.json(data);

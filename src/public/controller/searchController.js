@@ -10,7 +10,6 @@ angular.module('BostonApp').controller('searchController', function ($scope, $ht
 	$scope.items = test;
 	$scope.maxSize = 5;
 	$scope.bigTotalItems =  $scope.items.length;
-	//$scope.CurrentPage = 1;
 	$scope.itemsPerPage = 7;
 	$scope.currentPage = 1;
 
