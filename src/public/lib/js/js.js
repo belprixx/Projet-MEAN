@@ -9,11 +9,7 @@ $(document).keydown(function(e) {
     $(document).unbind('keydown',arguments.callee);
 
     // do something awesome
-<<<<<<< HEAD
     console.log("CC");
-=======
-    console.log("CC"); 
->>>>>>> 96afc8e1ecdf9e094c173ec7da823856bfd39afe
 
   }
 
