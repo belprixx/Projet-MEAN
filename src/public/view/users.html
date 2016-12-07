@@ -9,7 +9,7 @@
     <tbody>
           <tr ng-repeat="user in userList" ng-if="!user.enable">
             <td>
-                <button type="submit" class="btn btn-danger">
+                <button type="submit" class="btn btn-danger" ng-click="Delet(user._id)">
                       <span class="glyphicon glyphicon-trash"></span>
                 </button>
             </td>
@@ -17,7 +17,14 @@
                 {{user.username}}
               </td>
               <td>
-                {{ user.roles }}
+                  <select ng-model="roles">
+                      <option>Agent</option>
+                      <option>Detective</option>
+                      <option>chef de la police</option>
+                  </select>
+                  <button type="submit" class="btn btn-success" ng-click="NTM(roles, user._id)">
+                      <span class="glyphicon glyphicon-ok"></span>
+                  </button>
               </td>
           </tr>
     </tbody>

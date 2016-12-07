@@ -37,6 +37,45 @@ app.get('/api/userList', function(req, res){
    });
 });
 
+// Role User List
+app.post('/api/userList2', function (req, res) {
+    console.log(req.body);
+    console.log(req.body.roles);
+    User.findById(req.body.id, function(err, user) {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        }
+        console.log(req.body.roles);
+        user.roles = req.body.roles;
+        user.enable = "1";
+        user.save(function(err) {
+            if (err){
+                console.log(err);
+                res.send(err);
+            }
+            else {
+                res.json({message: "user updated"});
+                console.log('User successfully updated!');
+            }
+        });
+    });
+    console.log(req.body.id);
+
+});
+
+
+//supprimer user
+
+app.post('/api/userDel', function (req,res) {
+    var Del = req.body;
+    console.log(req.body.id);
+    User.findById(Del).remove().exec();
+    res.send('User Deleted');
+
+});
+
+
 //Tout afficher
 app.get('/api/showAll', function(req, res) {
     Crime.find({} ,function (err, data) {
@@ -54,6 +93,7 @@ app.post('/api/search', function(req, res) {
         res.json(data);
     });
 });
+
 
 //Chercher et supprimer
 
