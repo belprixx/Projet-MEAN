@@ -20,7 +20,6 @@ mongoose.connect('mongodb://mongo/mydb', function(err) {
     }
 });
 
-
 //Tout afficher
 app.get('/api/showAll', function(req, res) {
     Crime.find({} ,function (err, data) {
@@ -55,7 +54,7 @@ app.post('/api/add', function(req, res) {
         naturecode: req.body.naturecode,
         incident_type_description: req.body.incident_type_description,
         main_crimecode: req.body.main_crimecode,
-        reptdistrict: req.body.repdistrict,
+        reptdistrict: req.body.reptdistrict,
         reportingarea: req.body.reportingarea,
         fromdate: req.body.fromdate,
         weapontype: req.body.weapontype,
@@ -95,7 +94,7 @@ app.post('/api/update', function(req, res) {
         crime.naturecode = req.body.naturecode || crime.naturecode;
         crime.incident_type_description = req.body.incident_type_description || crime.incident_type_description;
         crime.main_crimecode = req.body.main_crimecode || crime.main_crimecode;
-        crime.reptdistrict = req.body.repdistrict || crime.reptdistrict;
+        crime.reptdistrict = req.body.reptdistrict || crime.reptdistrict;
         crime.reportingarea = req.body.reportingarea || crime.reportingarea;
         crime.fromdate = req.body.fromdate || crime.fromdate;
         crime.weapontype = req.body.weapontype || crime.weapontype;

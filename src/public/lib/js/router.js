@@ -25,17 +25,17 @@ routeApp.config(function($routeProvider) {
             controller  : 'homeController'
         })
 
-        // route for the about page
-
         // route for the logout page
         .when('/user/logout', {
             template: '',
             controller: 'logoutController'
         })
+
         .when('/user/users', {
           templateUrl : '/view/users.html',
           controller : 'usersController'
         })
+
         // route for search
         .when('/user/search', {
           templateUrl : '/view/search.html',

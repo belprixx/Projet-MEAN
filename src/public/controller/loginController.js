@@ -4,6 +4,7 @@ angular.module('BostonApp').controller('loginController', function($scope, userF
 					userFactory.setUsername($scope.userName).login();
 				var login = userFactory.setUsername($scope.userName).login();
 					$location.url('/');
+
 			} else {
 					alert('Invalide');
 			}

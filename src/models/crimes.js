@@ -22,8 +22,24 @@ var crimeSchema = new Schema({
     y: Number,
     streetname: String,
     xstreetname: String,
-    location: [Number]
+    location: String
 
+    /*
+
+    CORRIGER LA LOCATION : ESSAYER AVEC INFOS EN DESSOUS
+
+    I fixed it myself.
+
+        I did this in my model:
+
+    loc :  { type: {type:String}, coordinates: [Number]},
+Underneath I made it a 2dsphere index.
+
+eventSchema.index({loc: '2dsphere'});
+And to add data to it:
+
+    loc: { type: "Point", coordinates: [ longitude, latitude ] },
+*/
 });
 
 var Crime = mongoose.model('Crime', crimeSchema);
