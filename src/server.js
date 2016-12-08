@@ -39,14 +39,11 @@ app.get('/api/userList', function(req, res){
 
 // Role User List
 app.post('/api/userList2', function (req, res) {
-    console.log(req.body);
-    console.log(req.body.roles);
     User.findById(req.body.id, function(err, user) {
         if (err) {
             console.log(err);
             res.send(err);
         }
-        console.log(req.body.roles);
         user.roles = req.body.roles;
         user.enable = "1";
         user.save(function(err) {
@@ -60,8 +57,6 @@ app.post('/api/userList2', function (req, res) {
             }
         });
     });
-    console.log(req.body.id);
-
 });
 
 
@@ -70,7 +65,10 @@ app.post('/api/userList2', function (req, res) {
 app.post('/api/userDel', function (req,res) {
     var Del = req.body;
     console.log(req.body.id);
-    User.findById(Del).remove().exec();
+    User.findById(Del, function(res, err) {
+        if(err) console.log(err);
+        if(res) console.log(res);
+    }).remove().exec();
     res.send('User Deleted');
 
 });

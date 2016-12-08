@@ -22,8 +22,9 @@ angular.module('BostonApp').controller('usersController', function ($scope, $htt
   };
   $scope.Delet = function (tata) {
     var data = $.param({
-      id : tata,
+      _id : tata,
     })
+    console.log(data);
     $http({
       url: "/api/userDel", method:'POST',
       data: data,
