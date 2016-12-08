@@ -47,7 +47,6 @@ angular.module('BostonApp').factory('userFactory', ['localStorageService',
 		};
 
 		userEntity.setUsername = function(username, user_role) {
-			console.log(user_role);
 			userEntity.username = username;
 			userEntity.userRole = user_role;
 			localStorageService.set('user', {

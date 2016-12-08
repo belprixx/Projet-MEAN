@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
+const md5 = require('MD5');
+const path = require('path');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var Crime = require('./models/crimes');
-const path = require('path');
 var User = require('./models/users');
 
 app.set('view engine', 'jade');
@@ -26,6 +27,26 @@ app.post('/api/userConnect', function(req, res){
     if (err) console.log(err);
     res.json(data);
   });
+});
+
+// get User Register
+app.post('/api/userRegister', function(req, res){
+    console.log(md5(req.body.password));
+    let newUser = new User({
+      username : req.body.userName,
+      password : req.body.password,
+      enable : false
+    });
+    newUser.save(function (err) {
+        if (err){
+            console.log(err);
+            res.send(err);
+        }
+        else {
+            res.json({message: "user added"});
+        }
+    });
+
 });
 
 //Tout afficher
