@@ -47,7 +47,7 @@ angular.module('BostonApp').factory('userFactory', ['localStorageService',
 		}
 
 		userEntity.isStaff = function () {
-			return (userEntity.userRole == 'chef de la police' || userEntity.userRole == 'commissaire')
+			return (userEntity.userRole == 'chef de la police' || userEntity.userRole == 'Detective')
 		}
 
 		userEntity.getUsername = function() {

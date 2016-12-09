@@ -368,7 +368,7 @@ body {
 }
 .search_select
 {
-    margin-left: 20%;
+    margin-left: auto;
 }
 
 
@@ -387,12 +387,15 @@ body {
 }
 .table_crime > thead > tr > th
 {
-    border-color: purple;
+    border-color: black;
     border-style: solid;
 
 }
-
-
+.table_crime > tbody > tr > td
+{
+  border-style: solid;
+  border-color: #DDDDDD;
+}
 th
 {
     padding: 5px;
