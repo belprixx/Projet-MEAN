@@ -17,8 +17,15 @@ angular.module('BostonApp').controller('loginController', function($scope, userF
 								];
 							}
 							else{
-								var login = userFactory.setUsername(response.data.username, response.data.roles).login();
-								$location.url('/');
+								if( response.data !== 'not actived'){
+									var login = userFactory.setUsername(response.data.username, response.data.roles).login();
+									$location.url('/');
+								}
+								else{
+									$scope.alerts = [
+	    							{ type: 'danger', msg: 'Compte pas encore activer' },
+									];
+								}
 							}
 						}
 				);

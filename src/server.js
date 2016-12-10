@@ -27,7 +27,12 @@ app.post('/api/userConnect', function(req, res){
     if (err){
       console.log(err);
     }
-    res.json(data);
+    if(data.enable === true)  {
+      res.json(data);
+    }
+    else {
+      res.json('not actived');
+    }
   });
 });
 
