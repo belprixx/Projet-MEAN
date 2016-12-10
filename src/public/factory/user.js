@@ -42,8 +42,20 @@ angular.module('BostonApp').factory('userFactory', ['localStorageService',
 			return userEntity.logged;
 		};
 
+		userEntity.isAdmin = function () {
+			return (userEntity.userRole == 'chef de la police')
+		}
+
+		userEntity.isStaff = function () {
+			return (userEntity.userRole == 'chef de la police' || userEntity.userRole == 'Detective')
+		}
+
 		userEntity.getUsername = function() {
 			return userEntity.username;
+		};
+
+		userEntity.getRole = function() {
+			return userEntity.userRole;
 		};
 
 		userEntity.setUsername = function(username, user_role) {

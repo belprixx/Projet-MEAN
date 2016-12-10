@@ -1,3 +1,4 @@
-angular.module('BostonApp').controller('usersController', function ($scope, $http) {
+angular.module('BostonApp').controller('crimesController', function ($scope, $http) {
   console.log("crimes marche");
-}
+  console.log($scope.Nom22);
+});

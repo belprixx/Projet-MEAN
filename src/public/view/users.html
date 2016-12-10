@@ -1,39 +1,89 @@
+<div ng-app="nav_com">
+  <div class="bar_lat_gauche" >
+    <!--<a href="#/">Home</a>-->
+    <!--<a href="#/user/login" ng-if="!connected">Login</a>-->
+<div class="container" ng-controller="headerController">
+	<div class="row">
+		 <div class="wrapper">
+        <!-- Sidebar -->
+            <ul style="margin-left:0;">
+                <li>
+                  <a href="#menu-toggle" style="margin-top:20px;float:right;" >
+                    <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                    <a href="#/Home" ng-if="connected">
+                      <i class="fa fa-home" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/logout" ng-if="connected">
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/search">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/crimes">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/users" ng-if="connected">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+</a>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
 <table class="table_users">
     <thead>
         <tr>
-            <th  colspan="3">User</th>
-            <th>Email</th>
+            <th></th>
+            <th>User</th>
             <th>Grade</th>
         </tr>
     </thead>
     <tbody>
-          <tr>
+          <tr ng-repeat="user in userList" ng-if="!user.enable">
             <td>
-              <form class="deleteButtonDocument" method="POST" style="display:inline;" action="">
-                  <input type="hidden" name="_method" value="delete">
-                  <button type="submit" class="btn btn-danger">
+                <button type="submit" class="btn btn-danger" ng-click="Delet(user._id)">
                       <span class="glyphicon glyphicon-trash"></span>
-                  </button>
-                  </form>
+                </button>
             </td>
               <td>
-                <!--        {{item.name}}       -->Marchal
+                {{user.username}}
               </td>
-
               <td>
-                <!--        {{item.name}}       -->Remi
-              </td>
-
-              <td>
-                <!--        {{item.mail}}       -->Email
-              </td>
-
-              <td>
-                <select>
-                  <option>Agent</option>
-                  <option>Détective</option>
-                  <option>Chef de la police</option>
-                </select>
+                  <select ng-model="roles">
+                      <option>Agent</option>
+                      <option>Detective</option>
+                      <option>chef de la police</option>
+                  </select>
+                  <button type="submit" class="btn btn-success" ng-click="NTM(roles, user._id)">
+                      <span class="glyphicon glyphicon-ok"></span>
+                  </button>
               </td>
           </tr>
     </tbody>
