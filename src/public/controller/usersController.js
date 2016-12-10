@@ -1,4 +1,4 @@
-angular.module('BostonApp').controller('usersController', function ($scope, $http) {
+angular.module('BostonApp').controller('usersController', function ($scope, $http, $timeout, $location, $route) {
   $http({
     url: "/api/userList", method: 'GET',
     data: "",
@@ -9,28 +9,50 @@ angular.module('BostonApp').controller('usersController', function ($scope, $htt
       }
   );
 
-  $scope.NTM = function (yolo, toto) {
+  $scope.modifRoles = function (userRoles, userId) {
     var data = $.param({
-      roles : yolo,
-      id : toto,
+      roles : userRoles,
+      id : userId,
     })
     $http({
-      url: "/api/userList2", method:'POST',
+      url: "/api/user/roles", method:'POST',
       data: data,
       headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
-    });
-  };
-  $scope.Delet = function (tata) {
-    var data = $.param({
-      _id : tata,
-    })
-    console.log(data);
-    $http({
-      url: "/api/userDel", method:'POST',
-      data: data,
-      headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
-    });
+    }).then(
+        function(response){
+          if (response.data.message === 'user updated') {
 
+          }
+          $scope.alerts = [
+            { type: 'success', msg: "Le role de l'utilisateur a ete modifer et egalement son compte a ete acticver" },
+          ];
+          $timeout(function() {
+            $route.reload();
+          }, 3000);
+        }
+    );
+  };
+
+  $scope.Deleted = function (id_user) {
+    var data = $.param({
+      _id : id_user,
+    })
+    $http({
+      url: "/api/user/Deleted", method:'POST',
+      data: data,
+      headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
+    }).then(
+        function(response){
+          if (response.data.message === 'user deleted') {
+            $scope.alerts = [
+              { type: 'success', msg: 'Utilisateur supprimer' },
+            ];
+            $timeout(function() {
+              $route.reload();
+            }, 3000);
+          }
+        }
+    );
   };
 
 });

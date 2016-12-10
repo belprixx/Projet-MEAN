@@ -28,6 +28,11 @@ angular.module('BostonApp').controller('registerController', function($scope, us
 							}
 					);
 				}
+				else {
+					$scope.alerts = [
+						{ type: 'warning', msg: 'Vos mot de passe ne sont pas similaire !!' },
+					];
+				}
 			}
 		};
 

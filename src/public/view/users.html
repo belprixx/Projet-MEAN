@@ -48,14 +48,7 @@
 	</div>
 </div>
 
-
-
-
-
-
-
-
-
+  <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type)" close="closeAlert($index)">{{alert.msg}}</div> 
 
 <table class="table_users">
     <thead>
@@ -68,7 +61,7 @@
     <tbody>
           <tr ng-repeat="user in userList" ng-if="!user.enable">
             <td>
-                <button type="submit" class="btn btn-danger" ng-click="Delet(user._id)">
+                <button type="submit" class="btn btn-danger" ng-click="Deleted(user._id)">
                       <span class="glyphicon glyphicon-trash"></span>
                 </button>
             </td>
@@ -81,7 +74,7 @@
                       <option>Detective</option>
                       <option>chef de la police</option>
                   </select>
-                  <button type="submit" class="btn btn-success" ng-click="NTM(roles, user._id)">
+                  <button type="submit" class="btn btn-success" ng-click="modifRoles(roles, user._id)">
                       <span class="glyphicon glyphicon-ok"></span>
                   </button>
               </td>

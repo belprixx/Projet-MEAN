@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 mongoose.connect('mongodb://mongo/mydb', function(err) {
     if (err) {
-        throw err;
+        console.log(err);
     }
     else {
         console.log("connected")
@@ -25,7 +25,7 @@ mongoose.connect('mongodb://mongo/mydb', function(err) {
 app.post('/api/userConnect', function(req, res){
   User.findOne({"username": req.body.username, "password": md5(req.body.password)},function (err, data){
     if (err){
-      console.log(err);
+      res.json(err);
     }
     if(data.enable === true)  {
       res.json(data);
@@ -45,8 +45,7 @@ app.post('/api/userRegister', function(req, res){
     });
     newUser.save(function (err) {
         if (err){
-            console.log(err);
-            res.send(err);
+            res.json(err);
         }
         else {
             res.json({message: "user added"});
@@ -58,74 +57,65 @@ app.post('/api/userRegister', function(req, res){
 // get User List
 app.get('/api/userList', function(req, res){
    User.find({}, function(err, data){
-     if(err) console.log(err);
+     if(err) res.json(err);
        res.json(data);
    });
 });
 
-// Role User List
-app.post('/api/userList2', function (req, res) {
+// modif Role User
+app.post('/api/user/roles', function (req, res) {
     User.findById(req.body.id, function(err, user) {
         if (err) {
-            console.log(err);
-            res.send(err);
+            res.json(err);
         }
         user.roles = req.body.roles;
         user.enable = "1";
         user.save(function(err) {
             if (err){
-                console.log(err);
-                res.send(err);
+                res.json(err);
             }
             else {
                 res.json({message: "user updated"});
-                console.log('User successfully updated!');
             }
         });
     });
 });
 
 //supprimer user
-app.post('/api/userDel', function (req,res) {
+app.post('/api/user/Deleted', function (req,res) {
     var Del = req.body;
-    console.log(req.body.id);
     User.findById(Del, function(res, err) {
-        if(err) console.log(err);
-        if(res) console.log(res);
+        if(err) res.json(err);
     }).remove().exec();
-    res.send('User Deleted');
+  res.json({message: "user deleted"});
 
 });
 
 //Tout afficher
 app.get('/api/showAll', function(req, res) {
     Crime.find({} ,function (err, data) {
-        if (err) throw err;
+        if (err) res.json(err);
         res.json(data);
     });
 });
 
 //Chercher
-
 app.post('/api/search', function(req, res) {
     var query = req.body;
     Crime.find(query ,function (err, data) {
-        if (err) throw err;
+        if (err) res.json(err);
         res.json(data);
     });
 });
 
-
 //Chercher et supprimer
-
 app.post('/api/delete', function(req, res) {
     var query = req.body;
     Crime.find(query).remove().exec();
-    res.send('Deleted');
+    res.json('Deleted');
 });
 
 //Créer
-
 app.post('/api/add', function(req, res) {
     var createCrime = new Crime({
         compnos: req.body.compnos,
@@ -151,8 +141,7 @@ app.post('/api/add', function(req, res) {
     });
     createCrime.save(function (err) {
         if (err){
-            console.log(err);
-            res.send(err);
+            res.json(err);
         }
         else {
             res.json({message: "Crime added"});
@@ -161,12 +150,10 @@ app.post('/api/add', function(req, res) {
 });
 
 //Updater
-
 app.post('/api/update', function(req, res) {
     Crime.findById(req.body._id, function(err, crime) {
         if (err){
-            console.log(err);
-            res.send(err);
+            res.json(err);
         }
         crime.compnos = req.body.compnos || crime.compnos;
         crime.naturecode = req.body.naturecode || crime.naturecode;
@@ -191,12 +178,10 @@ app.post('/api/update', function(req, res) {
 
         crime.save(function(err) {
             if (err){
-                console.log(err);
-                res.send(err);
+                res.json(err);
             }
             else {
                 res.json({message: "Crime updated"});
-                console.log('User successfully updated!');
             }
         });
     });
@@ -206,10 +191,10 @@ app.post('/api/update', function(req, res) {
 app.get('/api/logout', function(req, res) {
     mongoose.connection.close( function(err) {
         if (err) {
-            throw err;
+            res.json(err);
         }
         else {
-            res.send('disconnected');
+            res.json('disconnected');
         }
     });
 });
