@@ -23,19 +23,20 @@ mongoose.connect('mongodb://mongo/mydb', function(err) {
 
 // get User Connect
 app.post('/api/userConnect', function(req, res){
-  User.findOne({"username": req.body.username, "password": req.body.password},function (err, data){
-    if (err) console.log(err);
+  User.findOne({"username": req.body.username, "password": md5(req.body.password)},function (err, data){
+    if (err){
+      console.log(err);
+    }
     res.json(data);
   });
 });
 
 // get User Register
 app.post('/api/userRegister', function(req, res){
-    console.log(md5(req.body.password));
     let newUser = new User({
       username : req.body.userName,
-      password : req.body.password,
-      enable : false
+      password : md5(req.body.passWord),
+      enable : false,
     });
     newUser.save(function (err) {
         if (err){

@@ -11,12 +11,22 @@ angular.module('BostonApp').controller('loginController', function($scope, userF
 				    headers : {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
 				}).then(
 						function(response){
-							var login = userFactory.setUsername(response.data.username, response.data.roles).login();
-							$location.url('/');
+							if (response.data === null) {
+								$scope.alerts = [
+    							{ type: 'danger', msg: 'Mauvais Login ou Mot de passe !!!' },
+								];
+							}
+							else{
+								var login = userFactory.setUsername(response.data.username, response.data.roles).login();
+								$location.url('/');
+							}
 						}
 				);
 			} else {
 					alert('Invalide');
 			}
 	};
+			$scope.closeAlert = function(index) {
+			$scope.alerts.splice(index, 1);
+		};
 });
