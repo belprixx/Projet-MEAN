@@ -1,4 +1,52 @@
+
+<div class="container" ng-controller="headerController">
+  <div class="row">
+     <div class="wrapper">
+        <!-- Sidebar -->
+            <ul style="margin-left:0;">
+                <li>
+                  <a href="#menu-toggle" style="margin-top:20px;float:right;" >
+                    <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                    <a href="#/Home" >
+                      <i class="fa fa-home" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/logout" >
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/search">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/crimes">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/users" >
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+</a>
+  </div>
+</div>
+
 <form class="form-horizontal">
+
 <fieldset class="field_crimes">
 
 <!-- Form Name -->
@@ -9,7 +57,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="Nom22">Compnos</label>
       <div class="col-md-4">
-      <input id="Nom22" name="Nom22" placeholder="compnos" class="form-control input-sm" required="" type="text">
+      <input ng-model="Nom22" id="Nom22" name="Nom22" placeholder="compnos" class="form-control input-sm" required="" type="text">
 
       </div>
     </div>
@@ -55,9 +103,6 @@
 
 
   <div class="block2">
-
-
-
 
 
 
