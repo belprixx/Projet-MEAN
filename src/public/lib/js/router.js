@@ -59,11 +59,18 @@ routeApp.config(function($routeProvider) {
 }).run(['$rootScope', 'localStorageService', '$location', 'userFactory',
     function($rootScope, localStorageService, $location, userFactory) {
         $rootScope.$on('$routeChangeStart', function(event) {
-          console.log(!userFactory.isSignedIn());
-            if (!userFactory.isSignedIn())
+            if ($location.url() == '/user/register' && !userFactory.isSignedIn()){
+                    $location.path('/user/register')
+            }
+            else if ($location.url() == '/user/register' && userFactory.isSignedIn()){
+                  event.preventDefault()
+            }
+            else if (!userFactory.isSignedIn()){
                 $location.path('/user/login');
-            else if ($location.path() == '/user/login')
+              }
+            else if ($location.path() == '/user/login'){
                 event.preventDefault();
+            }
         });
     }
 ]);

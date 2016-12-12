@@ -1,5 +1,7 @@
 <!-- Main Form -->
 
+  <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type)" close="closeAlert($index)">{{alert.msg}}</div> 
+
   <div class="login-form-1">
      <form name="loginForm" ng-submit="submitForm(loginForm)" class="text-left">
          <div class="login-form-main-message"></div>
