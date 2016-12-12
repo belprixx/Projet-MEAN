@@ -1,4 +1,58 @@
 
+<div ng-app="nav_com">
+  <div class="bar_lat_gauche" >
+    <!--<a href="#/">Home</a>-->
+    <!--<a href="#/user/login" ng-if="!connected">Login</a>-->
+<div class="container" ng-controller="headerController">
+	<div class="row">
+		 <div class="wrapper">
+        <!-- Sidebar -->
+            <ul style="margin-left:0;">
+                <li>
+                  <a href="#menu-toggle" style="margin-top:20px;float:right;" >
+                    <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                    <a href="#/Home" ng-if="connected">
+                      <i class="fa fa-home" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/logout" ng-if="connected">
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/search">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/crimes">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/users" ng-if="connected">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+</a>
+
+
+
+
+
+
+
 <form class="form-horizontal" name="crimesForm" ng-submit="submitForm(crimesForm)">
 <fieldset class="field_crimes">
 
@@ -102,21 +156,21 @@
       <input id="year" name="year" placeholder="year" ng-model="year" class="form-control input-sm" type="text">
       </div>
     </div>
-    
+
     <div class="form-group">
       <label class="col-md-4 control-label" ng-model="month" for="month">Month</label>
       <div class="col-md-4">
       <input id="month" name="month" placeholder="month" ng-model="month" class="form-control input-sm" type="text">
       </div>
     </div>
-    
+
     <div class="form-group">
       <label class="col-md-4 control-label" for="day_week" ng-model="day_week">Day_Week</label>
       <div class="col-md-4">
       <input id="day_week" name="day_week" placeholder="day week" ng-model="day_week" class="form-control input-sm" type="text">
       </div>
     </div>
-    
+
     <div class="form-group">
       <label class="col-md-4 control-label" ng-model="ucrpart" for="ucrpart">Ucrpart</label>
       <div class="col-md-4">
@@ -124,7 +178,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="block4">
   <div class="form-group">
       <label class="col-md-4 control-label" for="x" ng-model="x" >X</label>
@@ -132,7 +186,7 @@
       <input id="x" name="x" placeholder="x"  ng-model="x" class="form-control input-sm" type="text">
       </div>
     </div>
-    
+
     <div class="form-group">
       <label class="col-md-4 control-label" for="y" ng-model="y">Y</label>
       <div class="col-md-4">
@@ -146,7 +200,7 @@
       <input id="streetname" name="streetname" ng-model="streetname" placeholder="streetname" class="form-control input-sm" type="text">
       </div>
     </div>
-    
+
     <div class="form-group">
       <label class="col-md-4 control-label" ng-model="xstreetname" for="xstreetname">XStreetname</label>
       <div class="col-md-4">
@@ -166,7 +220,7 @@
     <div class="block5">
          <input type="submit" id="send" name="send" class="btn btn-primary btn-lg btn-block">Envoyer</input>
     </div>
-  
+
 </div>
 </fieldset>
 </form>
