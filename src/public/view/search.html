@@ -1,6 +1,53 @@
+<div class="container" ng-controller="headerController">
+	<div class="row">
+		 <div class="wrapper">
+        <!-- Sidebar -->
+            <ul style="margin-left:0;">
+                <li>
+                  <a href="#menu-toggle" style="margin-top:20px;float:right;" >
+                    <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                    <a href="#/Home" ng-if="connected">
+                      <i class="fa fa-home" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/logout" ng-if="connected">
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/search">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/crimes">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/user/users" ng-if="connected">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      <span style="margin-left: 1em;"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+</a>
+	</div>
+</div>
 
-<div>
-    <select>
+
+
+    <div>
+    <select class="search_select">
         <option>ALL</option>
         <option>ID</option>
         <option>COMPNOS</option>
@@ -25,6 +72,16 @@
         <option>LOCATION</option>
     </select>
 
+
+    <!--		<form class="search_input" action="">
+        <input type="text" placeholder="value">
+        <input type="submit" value="Submit">
+    </form>		-->
+
+
+
+    </div>
+    <div>
     <div class="table-responsive">
     <table class="table_crime">
         <thead>
@@ -61,6 +118,13 @@
                           <button type="submit" class="btn btn-danger">
                               <span class="glyphicon glyphicon-trash"></span>
                           </button>
+                          </form>
+											<form class="modifButtonDocument" method="POST" style="display:inline;" action="">
+		                      <input type="hidden" name="_method" value="modif">
+		                      <button type="submit" class="btn btn-warning">
+	                            <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+		                      </button>
+		                  </form>
                   </td>
                   <td>{{item.compnos}}</td>
                   <td>{{item.naturecode}}</td>
