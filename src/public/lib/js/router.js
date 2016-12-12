@@ -43,10 +43,19 @@ routeApp.config(function($routeProvider) {
           templateUrl : '/view/crimes.html',
           controller : 'crimesController'
         })
+
+        // route for the update page
+        .when('/user/update', {
+            templateUrl : '/view/crimeUpdate.html',
+            controller : 'crimesController'
+        })
+
         // route for the home page
         .otherwise({
             redirectTo: '/'
         });
+
+
 }).run(['$rootScope', 'localStorageService', '$location', 'userFactory',
     function($rootScope, localStorageService, $location, userFactory) {
         $rootScope.$on('$routeChangeStart', function(event) {

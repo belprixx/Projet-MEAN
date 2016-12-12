@@ -1,52 +1,5 @@
 
-<div class="container" ng-controller="headerController">
-  <div class="row">
-     <div class="wrapper">
-        <!-- Sidebar -->
-            <ul style="margin-left:0;">
-                <li>
-                  <a href="#menu-toggle" style="margin-top:20px;float:right;" >
-                    <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                    <a href="#/Home" >
-                      <i class="fa fa-home" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/logout" >
-                      <i class="fa fa-sign-out" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/search">
-                      <i class="fa fa-search" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/crimes">
-                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/users" >
-                      <i class="fa fa-user" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-</a>
-  </div>
-</div>
-
-<form class="form-horizontal">
-
+<form class="form-horizontal" name="crimesForm" ng-submit="submitForm(crimesForm)">
 <fieldset class="field_crimes">
 
 <!-- Form Name -->
@@ -55,70 +8,57 @@
   <div class="block1">
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="Nom22">Compnos</label>
+      <label class="col-md-4 control-label" for="compnos" ng-model="compnos">Compnos</label>
       <div class="col-md-4">
-      <input ng-model="Nom22" id="Nom22" name="Nom22" placeholder="compnos" class="form-control input-sm" required="" type="text">
-
+      <input id="compnos" name="compnos" placeholder="compnos" ng-model="compnos" class="form-control input-sm"  type="text">
       </div>
     </div>
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="Prénom">Nature Code</label>
+      <label class="col-md-4 control-label" for="natureCode" ng-model="natureCode">Nature Code</label>
       <div class="col-md-4">
-      <input id="Prénom" name="Prénom" placeholder="nature code" class="form-control input-sm" required="" type="text">
-
+      <input id="natureCode" name="natureCode" ng-model="natureCode" placeholder="nature code" class="form-control input-sm" type="text">
       </div>
     </div>
 
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="incident">Incident</label>
+      <label class="col-md-4 control-label" ng-model="incident" for="incident">Incident</label>
       <div class="col-md-4">
-      <input id="incident" name="incident" placeholder="incident" class="form-control input-sm" required="" type="text">
-
+      <input id="incident" name="incident" ng-model="incident" placeholder="incident" class="form-control input-sm" type="text">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="crime_code">Crime Code</label>
+      <label class="col-md-4 control-label" ng-model="crimeCode" for="crime_code">Crime Code</label>
       <div class="col-md-4">
-      <input id="crime_code" name="crime_code" placeholder="crime code" class="form-control input-sm" required="" type="text">
-
+      <input id="crime_code" name="crime_code" ng-model="crimeCode" placeholder="crime code" class="form-control input-sm" type="text">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="district">District</label>
+      <label class="col-md-4 control-label" for="district" ng-model="district">District</label>
       <div class="col-md-4">
-      <input id="district" name="district" placeholder="district" class="form-control input-sm" required="" type="text">
-
+      <input id="district" name="district" placeholder="district" ng-model="district" class="form-control input-sm" type="text">
       </div>
     </div>
-
-
-
-
   </div>
 
-
   <div class="block2">
-
-
-
     <div class="form-group">
-      <label class="col-md-4 control-label" for="area">Area</label>
+      <label class="col-md-4 control-label" for="area" ng-model="area">Area</label>
       <div class="col-md-4">
-      <input id="area" name="area" placeholder="area" class="form-control input-sm" required="" type="text">
+      <input id="area" name="area" placeholder="area" ng-model="area" class="form-control input-sm" type="text">
 
       </div>
     </div>
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="Ddn">Date</label>
+      <label class="col-md-4 control-label" ng-model="date" for="date">Date</label>
       <div class="col-md-4">
-      <input id="Ddn" name="Ddn" placeholder="date" class="form-control input-sm" required="" type="text">
+      <input id="date" name="date" ng-model="date" placeholder="date" class="form-control input-sm" type="text">
     <!--  <span class="help-block">format :JJ/MM/YYYY   (VOIR FORMAT)</span>  -->
       </div>
     </div>
@@ -126,143 +66,107 @@
     <!-- Text input-->
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="weapon">Weapon</label>
+      <label class="col-md-4 control-label" for="weapon" ng-model="weapon" >Weapon</label>
       <div class="col-md-4">
-      <input id="weapon" name="weapon" placeholder="weapon" class="form-control input-sm" required="" type="text">
+      <input id="weapon" name="weapon" placeholder="weapon"ng-model="weapon" class="form-control input-sm" type="text">
 
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="shooting">Shooting</label>
+      <label class="col-md-4 control-label" for="shooting" ng-model="shooting">Shooting</label>
       <div class="col-md-4">
-      <input id="Shooting" name="shooting" placeholder="shooting" class="form-control input-sm" required="" type="text">
+      <input id="Shooting" name="shooting" placeholder="shooting" ng-model="shooting" class="form-control input-sm" type="text">
 
       </div>
     </div>
     <div class="form-group">
-      <label class="col-md-4 control-label" for="domestic">Domestic</label>
+      <label class="col-md-4 control-label" for="domestic" ng-model="domestic">Domestic</label>
       <div class="col-md-4">
-      <input id="domestic" name="domestic" placeholder="domestic" class="form-control input-sm" required="" type="text">
-
+      <input id="domestic" name="domestic" placeholder="domestic" ng-model="domestic" class="form-control input-sm" type="text">
       </div>
     </div>
-
-
-
-
-
   </div>
-
-
 
   <div class="block3">
-
-
-
-
     <div class="form-group">
-      <label class="col-md-4 control-label" for="shift">Shift</label>
+      <label class="col-md-4 control-label" for="shift" ng-model="shift">Shift</label>
       <div class="col-md-4">
-      <input id="shift" name="shift" placeholder="shift" class="form-control input-sm" required="" type="text">
-
+      <input id="shift" name="shift" placeholder="shift" ng-model="shift" class="form-control input-sm" type="text">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="year">Year</label>
+      <label class="col-md-4 control-label" for="year" ng-model="year" >Year</label>
       <div class="col-md-4">
-      <input id="year" name="year" placeholder="year" class="form-control input-sm" required="" type="text">
-
+      <input id="year" name="year" placeholder="year" ng-model="year" class="form-control input-sm" type="text">
       </div>
     </div>
+    
     <div class="form-group">
-      <label class="col-md-4 control-label" for="month">Month</label>
+      <label class="col-md-4 control-label" ng-model="month" for="month">Month</label>
       <div class="col-md-4">
-      <input id="month" name="month" placeholder="month" class="form-control input-sm" required="" type="text">
-
+      <input id="month" name="month" placeholder="month" ng-model="month" class="form-control input-sm" type="text">
       </div>
     </div>
+    
     <div class="form-group">
-      <label class="col-md-4 control-label" for="day_week">Day_Week</label>
+      <label class="col-md-4 control-label" for="day_week" ng-model="day_week">Day_Week</label>
       <div class="col-md-4">
-      <input id="day_week" name="day_week" placeholder="day week" class="form-control input-sm" required="" type="text">
-
+      <input id="day_week" name="day_week" placeholder="day week" ng-model="day_week" class="form-control input-sm" type="text">
       </div>
     </div>
+    
     <div class="form-group">
-      <label class="col-md-4 control-label" for="ucrpart">Ucrpart</label>
+      <label class="col-md-4 control-label" ng-model="ucrpart" for="ucrpart">Ucrpart</label>
       <div class="col-md-4">
-      <input id="ucrpart" name="ucrpart" placeholder="ucrpart" class="form-control input-sm" required="" type="text">
-
+      <input id="ucrpart" name="ucrpart" placeholder="ucrpart" ng-model="ucrpart" class="form-control input-sm" type="text">
       </div>
     </div>
-
-
-
-
-
-
-
   </div>
-
-
+  
   <div class="block4">
-
-
-
-
-
-
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="x">X</label>
+  <div class="form-group">
+      <label class="col-md-4 control-label" for="x" ng-model="x" >X</label>
       <div class="col-md-4">
-      <input id="x" name="x" placeholder="x" class="form-control input-sm" required="" type="text">
-
+      <input id="x" name="x" placeholder="x"  ng-model="x" class="form-control input-sm" type="text">
       </div>
     </div>
+    
     <div class="form-group">
-      <label class="col-md-4 control-label" for="y">Y</label>
+      <label class="col-md-4 control-label" for="y" ng-model="y">Y</label>
       <div class="col-md-4">
-      <input id="y" name="y" placeholder="y" class="form-control input-sm" required="" type="text">
-
+      <input id="y" name="y" placeholder="y" ng-model="y" class="form-control input-sm" type="text">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="streetname">Streetname</label>
+      <label class="col-md-4 control-label" for="streetname" ng-model="streetname">Streetname</label>
       <div class="col-md-4">
-      <input id="streetname" name="streetname" placeholder="streetname" class="form-control input-sm" required="" type="text">
-
+      <input id="streetname" name="streetname" ng-model="streetname" placeholder="streetname" class="form-control input-sm" type="text">
       </div>
     </div>
+    
     <div class="form-group">
-      <label class="col-md-4 control-label" for="xstreetname">XStreetname</label>
+      <label class="col-md-4 control-label" ng-model="xstreetname" for="xstreetname">XStreetname</label>
       <div class="col-md-4">
-      <input id="xstreetname" name="xstreetname" placeholder="xstreetname" class="form-control input-sm" required="" type="text">
-
+      <input id="xstreetname" name="xstreetname" placeholder="xstreetname" class="form-control input-sm" type="text">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="location">Location</label>
+      <label class="col-md-4 control-label" ng-model="location" for="location">Location</label>
       <div class="col-md-4">
-      <input id="location" name="location" placeholder="location" class="form-control input-sm" required="" type="text">
-
+      <input id="location" name="location" ng-model="location" placeholder="location" class="form-control input-sm"  type="text">
       </div>
     </div>
-
-
-
-
-
   </div>
 
   <!-- Button -->
     <div class="block5">
-         <button id="send" name="send" class="btn btn-primary btn-lg btn-block">Envoyer</button>
+         <input type="submit" id="send" name="send" class="btn btn-primary btn-lg btn-block">Envoyer</input>
     </div>
+  
 </div>
-
 </fieldset>
 </form>
