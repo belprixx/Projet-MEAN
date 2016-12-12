@@ -20,6 +20,7 @@ mongoose.connect('mongodb://mongo/mydb', function(err) {
     }
 });
 
+
 // get User TEST
 app.post('/api/userTEST', function(req, res){
   console.log(req.body);
