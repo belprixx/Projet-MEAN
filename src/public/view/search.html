@@ -44,6 +44,8 @@
 	</div>
 </div>
 
+	<div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type)" close="closeAlert($index)">{{alert.msg}}</div> 
+
 
 
     <div>
@@ -113,18 +115,9 @@
               <tr ng-repeat="item in filtereditems">
                   <td>
                       {{item._id}}
-                      <form class="deleteButtonDocument" method="POST" style="display:inline;" action="">
-                          <input type="hidden" name="_method" value="delete">
-                          <button type="submit" class="btn btn-danger">
+                          <button type="submit" class="btn btn-danger" ng-click="deletedCrime(item._id)">
                               <span class="glyphicon glyphicon-trash"></span>
                           </button>
-                          </form>
-											<form class="modifButtonDocument" method="POST" style="display:inline;" action="">
-		                      <input type="hidden" name="_method" value="modif">
-		                      <button type="submit" class="btn btn-warning">
-	                            <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
-		                      </button>
-		                  </form>
                   </td>
                   <td>{{item.compnos}}</td>
                   <td>{{item.naturecode}}</td>
