@@ -2,20 +2,6 @@ angular.module('BostonApp').controller('searchController', function ($scope, $ht
 
 	$scope.isAdmin = userFactory.isAdmin();
 
-	$http.get("/api/showAll")
-		.then(function(response) {
-			test = response.data;
-			$scope.items = test;
-			$scope.maxSize = 5;
-			$scope.bigTotalItems =  $scope.items.length;
-			$scope.itemsPerPage = 7;
-			$scope.currentPage = 1;
-		};
-
-	$scope.pageCount = function () {
-		return Math.ceil($scope.items.length / $scope.itemsPerPage);
-	};
-
 	$scope.deletedCrime = function (id_crime) {
 		var data = $.param ({
 			_id: id_crime
@@ -38,13 +24,6 @@ angular.module('BostonApp').controller('searchController', function ($scope, $ht
 			}
 		);
 	};
-
-	$scope.$watch('currentPage + itemsPerPage', function() {
-		var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
-			end = begin + $scope.itemsPerPage;
-
-		$scope.filtereditems = $scope.items.slice(begin, end);
-	});
 
 	$http.get("/api/showAll")
 		.then(function(response) {
