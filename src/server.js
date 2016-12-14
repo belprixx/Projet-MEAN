@@ -105,7 +105,7 @@ app.post('/api/search', function(req, res) {
     var value = req.body.crimeValue;
     var query = {};
     query[key] = value;
-    console.log(query);
+    //console.log(query);
     Crime.find(query ,function (err, data) {
         if (err) res.json(err);
         res.json(data);
