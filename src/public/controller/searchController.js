@@ -22,4 +22,29 @@ angular.module('BostonApp').controller('searchController', function ($scope, $ht
 		$scope.filtereditems = $scope.items.slice(begin, end);
 	});
 		});
+
+
+	$scope.delete_crime = function (id_crime) {
+		var data = $.param({
+			_id : id_crime,
+		})
+		$http({
+			url: "/api/delete", method:'POST',
+			data: data,
+			headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
+		}).then(
+			function(response){
+				if (response.data.message === 'crime deleted') {
+					$scope.alerts = [
+						{ type: 'success', msg: 'Crime supprime' },
+					];
+					$timeout(function() {
+						$route.reload();
+					}, 3000);
+				}
+			}
+		);
+	};
+
+
 });

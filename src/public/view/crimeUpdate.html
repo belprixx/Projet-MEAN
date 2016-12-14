@@ -1,27 +1,22 @@
 
-
-
-
-<form class="form-horizontal" name="crimesUpdateForm" ng-submit="submitUpdateForm(crimesUpdateForm)">
+<form class="form-horizontal" name="crimesForm" ng-submit="submitForm(crimesForm)">
     <fieldset class="field_crimes">
 
         <!-- Form Name -->
-        <legend>Update Crime</legend>
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="_id" ng-model="_id">ID</label>
-            <div class="col-md-4">
-                <input id="_id" name="_id" placeholder="_id" ng-model="_id" class="form-control input-sm"  type="text">
-
+        <legend>Update Crime
+            <div class="update_inpute">
+                <label class="col-md-4 control-label update_inpute_id" for="_id" ng-model="_id">ID</label>
+                <input id="_id" name="_id" placeholder="_id" ng-model="_id" class="form-control input-sm update_inpute"  type="text">
             </div>
-        </div>
-        <div class="all_blocks">
+        </legend>
+
+            <div class="all_blocks">
             <div class="block1">
                 <!-- Text input-->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="compnos" ng-model="compnos">Compnos</label>
                     <div class="col-md-4">
                         <input id="compnos" name="compnos" placeholder="compnos" ng-model="compnos" class="form-control input-sm"  type="text">
-
                     </div>
                 </div>
 
@@ -30,7 +25,6 @@
                     <label class="col-md-4 control-label" for="natureCode" ng-model="natureCode">Nature Code</label>
                     <div class="col-md-4">
                         <input id="natureCode" name="natureCode" ng-model="natureCode" placeholder="nature code" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
 
@@ -39,7 +33,6 @@
                     <label class="col-md-4 control-label" ng-model="incident" for="incident">Incident</label>
                     <div class="col-md-4">
                         <input id="incident" name="incident" ng-model="incident" placeholder="incident" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
 
@@ -47,7 +40,6 @@
                     <label class="col-md-4 control-label" ng-model="crimeCode" for="crime_code">Crime Code</label>
                     <div class="col-md-4">
                         <input id="crime_code" name="crime_code" ng-model="crimeCode" placeholder="crime code" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
 
@@ -55,19 +47,11 @@
                     <label class="col-md-4 control-label" for="district" ng-model="district">District</label>
                     <div class="col-md-4">
                         <input id="district" name="district" placeholder="district" ng-model="district" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
-
-
-
-
             </div>
 
-
             <div class="block2">
-
-
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="area" ng-model="area">Area</label>
                     <div class="col-md-4">
@@ -106,28 +90,15 @@
                     <label class="col-md-4 control-label" for="domestic" ng-model="domestic">Domestic</label>
                     <div class="col-md-4">
                         <input id="domestic" name="domestic" placeholder="domestic" ng-model="domestic" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
-
-
-
-
-
             </div>
 
-
-
             <div class="block3">
-
-
-
-
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="shift" ng-model="shift">Shift</label>
                     <div class="col-md-4">
                         <input id="shift" name="shift" placeholder="shift" ng-model="shift" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
 
@@ -135,59 +106,43 @@
                     <label class="col-md-4 control-label" for="year" ng-model="year" >Year</label>
                     <div class="col-md-4">
                         <input id="year" name="year" placeholder="year" ng-model="year" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label class="col-md-4 control-label" ng-model="month" for="month">Month</label>
                     <div class="col-md-4">
                         <input id="month" name="month" placeholder="month" ng-model="month" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="day_week" ng-model="day_week">Day_Week</label>
                     <div class="col-md-4">
                         <input id="day_week" name="day_week" placeholder="day week" ng-model="day_week" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label class="col-md-4 control-label" ng-model="ucrpart" for="ucrpart">Ucrpart</label>
                     <div class="col-md-4">
                         <input id="ucrpart" name="ucrpart" placeholder="ucrpart" ng-model="ucrpart" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
-
-
-
-
-
-
-
             </div>
 
-
             <div class="block4">
-
-
-
-
-
-
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="x" ng-model="x" >X</label>
                     <div class="col-md-4">
                         <input id="x" name="x" placeholder="x"  ng-model="x" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="y" ng-model="y">Y</label>
                     <div class="col-md-4">
                         <input id="y" name="y" placeholder="y" ng-model="y" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
 
@@ -195,14 +150,13 @@
                     <label class="col-md-4 control-label" for="streetname" ng-model="streetname">Streetname</label>
                     <div class="col-md-4">
                         <input id="streetname" name="streetname" ng-model="streetname" placeholder="streetname" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label class="col-md-4 control-label" ng-model="xstreetname" for="xstreetname">XStreetname</label>
                     <div class="col-md-4">
                         <input id="xstreetname" name="xstreetname" placeholder="xstreetname" class="form-control input-sm" type="text">
-
                     </div>
                 </div>
 
@@ -210,21 +164,15 @@
                     <label class="col-md-4 control-label" ng-model="location" for="location">Location</label>
                     <div class="col-md-4">
                         <input id="location" name="location" ng-model="location" placeholder="location" class="form-control input-sm"  type="text">
-
                     </div>
                 </div>
-
-
-
-
-
             </div>
 
             <!-- Button -->
             <div class="block5">
                 <input type="submit" id="send" name="send" class="btn btn-primary btn-lg btn-block">Envoyer</input>
             </div>
-        </div>
 
+        </div>
     </fieldset>
 </form>

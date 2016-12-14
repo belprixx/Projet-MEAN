@@ -12,73 +12,60 @@
 
 <body>
     <div class="bar">
-        <div class="centrage">
-            <div class="text-center" style="padding:50px 0">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-md-1" ng-controller="headerController">
+                    <div class="wrapper" ng-if="connected">
+                        <!-- Sidebar -->
+                        <ul>
+                            <li>
+                                <a href="#/Home" ng-if="connected">
+                                    <i class="fa fa-home"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/user/logout" ng-if="connected">
+                                    <i class="fa fa-sign-out"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/user/search">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/user/crimes">
+                                    <i class="fa fa-file-text-o"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/user/users" ng-if="connected">
+                                    <i class="fa fa-user"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+
+            <div class=" col-md-11 text-center content">
                 <div class="logo"><img src="lib/images/Boston-Police-logo.png" alt="Responsive image" class="img-circle" width="100" height="100">
                     <div ng-view></div>
                 </div>
             </div>
+
+
+                <footer class="text-center">
+                    <div class="pied">
+                        <p>Boston Police Interface</p>
+
+                        <p>Powered by Rémi MARCHAL, Samuel THOMAS, Théo TISON Projet MEAN: Boston Police App</p>
+                    </div>
+                </footer>
 </div>
 
 
-<div class="container" ng-controller="headerController">
-	<div class="row" ng-if="connected">
-		 <div class="wrapper">
-        <!-- Sidebar -->
-            <ul style="margin-left:0;">
-                <li>
-                  <a href="#menu-toggle" style="margin-top:20px;float:right;" >
-                    <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                    <a href="#/Home" ng-if="connected">
-                      <i class="fa fa-home" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/logout" ng-if="connected">
-                      <i class="fa fa-sign-out" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/search">
-                      <i class="fa fa-search" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/crimes">
-                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/update">
-                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/users" ng-if="connected">
-                      <i class="fa fa-user" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-      </a>
-  </div>
-</div>
-            <footer class="text-center">
-                <div class="pied">
-                    <p>Boston Police Interface</p>
 
-                    <p>Powered by Rémi MARCHAL, Samuel THOMAS, Théo TISON Projet MEAN: Boston Police App</p>
-                </div>
-            </footer>
+
             <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
             <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
             <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
@@ -96,6 +83,7 @@
             <script src="/controller/usersController.js"></script>
             <script src="/controller/registerController.js"></script>
             <script src="/controller/crimesController.js"></script>
+    </div>
 </div>
 </body>
 

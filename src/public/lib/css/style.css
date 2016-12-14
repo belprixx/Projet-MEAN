@@ -83,6 +83,7 @@ a:hover {
     color: #999999;
     border-radius: 8px;
     padding: 10px 20px;
+    margin-top: 30%;
 }
 .login-group-checkbox {
     padding: 5px 0;
@@ -303,7 +304,7 @@ label:hover:before {
 
 .pied
 {
-    margin-top: 27em;
+    margin-top: 43%;
 }
 
 .pied p
@@ -322,23 +323,25 @@ body {
 /* Home Styles */
 .wrapper
 {
-    margin-left: -2.7%;
-    margin-top: -12.7%;
-    position: absolute;
-    width: 3.5%;
-    height: 62.7%;
+    top:52%;
+    left:0%;
+    position: relative;
+    width: 35.5%;
+    height: 28.5em;
     background-color: black;
+    margin-top: 230%;
 }
 
 .wrapper > ul
 {
+    margin-left: -40%;
     list-style-type: none;
 }
 
 .wrapper > ul > li
 {
-  margin-left: -500%;
-  padding-right: 300%;
+  margin-left: -45%;
+  padding-top: 250%;
 }
 
 .home_center
@@ -488,10 +491,30 @@ th
 {
     position: absolute;
     margin-left: 40%;
-    margin-top: 36.5%;
+    margin-top: 30.5%;
 }
 
 .all_blocks
 {
     margin-left: 10%;
+}
+
+.content{
+    position: relative;
+    top: -27%;
+    left:-4%;
+}
+
+.update_inpute
+{
+    width: 33%;
+    height: 0%;
+    margin-left: 60%;
+    margin-top: -2%;
+
+}
+.update_inpute_id
+{
+    margin-left: 10%;
+
 }

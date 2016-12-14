@@ -109,11 +109,25 @@ app.post('/api/search', function(req, res) {
 });
 
 //Chercher et supprimer
-app.post('/api/delete', function(req, res) {
-    var query = req.body;
-    Crime.find(query).remove().exec();
-    res.json('Deleted');
+//app.post('/api/delete', function(req, res) {
+  //  var query = req.body;
+    //Crime.find(query).remove().exec();
+    //res.json('Deleted');
+//});
+
+app.post('/api/delete', function (req,res) {
+    var Del = req.body;
+    Crime.findById(Del, function(res, err) {
+        if(err) res.json(err);
+    }).remove().exec();
+    res.json({message: "Crime deleted"});
+
 });
+
+
+
+
+
 
 //Créer
 app.post('/api/add', function(req, res) {
