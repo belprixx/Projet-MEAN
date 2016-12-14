@@ -83,6 +83,7 @@ a:hover {
     color: #999999;
     border-radius: 8px;
     padding: 10px 20px;
+    margin-top: 30%;
 }
 .login-group-checkbox {
     padding: 5px 0;
@@ -303,7 +304,7 @@ label:hover:before {
 
 .pied
 {
-    margin-top: 27em;
+    margin-top: 43%;
 }
 
 .pied p
@@ -322,32 +323,34 @@ body {
 /* Home Styles */
 .wrapper
 {
-    margin-left: -2.35em;
-    margin-top: 9.5em;
-    position: absolute;
-    width: 3em;
-    height: 30.35em;
+    top:52%;
+    left:0%;
+    position: relative;
+    width: 35.5%;
+    height: 28.5em;
     background-color: black;
+    margin-top: 230%;
 }
 
 .wrapper > ul
 {
+    margin-left: -40%;
     list-style-type: none;
 }
 
 .wrapper > ul > li
 {
-  margin-left: -1.6em;
-  padding-right: 1em;
+  margin-left: -45%;
+  padding-top: 250%;
 }
 
 .home_center
 {
-    height: 10em;
-    width: 30em;
+    height: 20%;
+    width: 40%;
     background-color: #DDDDDD;
-    margin-left: 25em;
-    margin-top: 9.5em;
+    margin-left: 30%;
+    margin-top: 11.15%;
     position: relative;
 
 }
@@ -405,8 +408,8 @@ th
 /*    PAGE USERS    */
 .table_users
 {
-  margin-top: 9.5em;
-  margin-left: 10em;
+  margin-top: 11.15%;
+  margin-left: 12%;
   background-color:  #fefefa;
   width: 80%;
   height: auto;
@@ -437,61 +440,81 @@ th
 .block1
 {
   position: absolute;
- margin-left: 12em;
+  margin-left: -5%;
   background-color: #DDDDDD;
-  width: 41.667em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border-radius: 4%;
-    font-size: 12px;
+  width: 36%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 4%;
+  font-size: 12px;
 }
 
 .block2
 {
   position: absolute;
-  margin-left: 80em;
+  margin-left: 50%;
   background-color: #DDDDDD;
-  width: 41.667em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border-radius: 4%;
-    font-size: 12px;
+  width: 36%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 4%;
+  font-size: 12px;
 }
 
 .block3
 {
   position: absolute;
-    margin-left: 12em;
-  margin-top: 23em;
+  margin-left: -5%;
+  margin-top: 20%;
   background-color: #DDDDDD;
-  width: 41.667em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border-radius: 4%;
-    font-size: 12px;
+  width: 36%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 4%;
+  font-size: 12px;
 }
 
 .block4
 {
   position: absolute;
-    margin-left: 80em;
-    margin-top: 23em;
+  margin-left: 50%;
+  margin-top: 20%;
   background-color: #DDDDDD;
-  width: 41.667em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border-radius: 4%;
-    font-size: 12px;
+  width: 36%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 4%;
+  font-size: 12px;
 }
 
 .block5
 {
     position: absolute;
-    margin-left: 51em;
-    margin-top: 32em;
+    margin-left: 40%;
+    margin-top: 30.5%;
 }
 
 .all_blocks
 {
-    margin-left: 7.5em;
+    margin-left: 10%;
+}
+
+.content{
+    position: relative;
+    top: -27%;
+    left:-4%;
+}
+
+.update_inpute
+{
+    width: 33%;
+    height: 0%;
+    margin-left: 60%;
+    margin-top: -2%;
+
+}
+.update_inpute_id
+{
+    margin-left: 10%;
+
 }

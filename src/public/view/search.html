@@ -1,85 +1,36 @@
-<div class="container" ng-controller="headerController">
-	<div class="row">
-		 <div class="wrapper">
-        <!-- Sidebar -->
-            <ul style="margin-left:0;">
-                <li>
-                  <a href="#menu-toggle" style="margin-top:20px;float:right;" >
-                    <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                    <a href="#/Home" ng-if="connected">
-                      <i class="fa fa-home" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/logout" ng-if="connected">
-                      <i class="fa fa-sign-out" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/search">
-                      <i class="fa fa-search" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/crimes">
-                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/users" ng-if="connected">
-                      <i class="fa fa-user" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-</a>
-	</div>
-</div>
 
 	<div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type)" close="closeAlert($index)">{{alert.msg}}</div>
 
 
 
     <div>
-    <select class="search_select">
-        <option>ALL</option>
-        <option>ID</option>
-        <option>COMPNOS</option>
-        <option>NATURECODE</option>
-        <option>INCIDENTS</option>
-        <option>CRIME CODE</option>
-        <option>DISTRICT</option>
-        <option>AREA</option>
-        <option>DATE</option>
-        <option>WEAPON</option>
-        <option>SHOOTING</option>
-        <option>DOMESTIC</option>
-        <option>SHIFT</option>
-        <option>YEAR</option>
-        <option>MONTH</option>
-        <option>DAY_WEEK</option>
-        <option>UCRPART</option>
-        <option>X</option>
-        <option>Y</option>
-        <option>STREETNAME</option>
-        <option>XSTREETNAME</option>
-        <option>LOCATION</option>
-    </select>
+            <select class="" name="key" ng-model="key">
+                <option value="">ALL</option>
+                <option value="_id">ID</option>
+                <option value="compnos">COMPNOS</option>
+                <option value="naturecode">NATURECODE</option>
+                <option value="incident_type_description">INCIDENTS</option>
+                <option value="main_crimecode">CRIME CODE</option>
+                <option value="repdistrict">DISTRICT</option>
+                <option value="reportingarea">AREA</option>
+                <option value="fromdate">DATE</option>
+                <option value="weapontype">WEAPON</option>
+                <option value="shooting">SHOOTING</option>
+                <option value="domestic">DOMESTIC</option>
+                <option value="shift">SHIFT</option>
+                <option value="year">YEAR</option>
+                <option value="month">MONTH</option>
+                <option value="day_week">DAY_WEEK</option>
+                <option value="ucrpart">UCRPART</option>
+                <option value="x">X</option>
+                <option value="y">Y</option>
+                <option value="streetname">STREETNAME</option>
+                <option value="xstreetname">XSTREETNAME</option>
+                <option value="location">LOCATION</option>
+            </select>
 
-
-    <!--		<form class="search_input" action="">
-        <input type="text" placeholder="value">
-        <input type="submit" value="Submit">
-    </form>		-->
-
+            <input type="text" placeholder="value" name="value" ng-model="value">
+            <input type="submit" value="Submit" ng-click="searchCrime(key,value)">
 
 
     </div>
@@ -115,9 +66,13 @@
               <tr ng-repeat="item in filtereditems">
                   <td>
                       {{item._id}}
-                          <button type="submit" class="btn btn-danger" ng-click="deletedCrime(item._id)" ng-if="isAdmin">
-                              <span class="glyphicon glyphicon-trash"></span>
-                          </button>
+											<br>
+                      <button type="submit" class="btn btn-danger" ng-click="deletedCrime(item._id)" ng-if="isAdmin">
+                        <span class="glyphicon glyphicon-trash"></span>
+                      </button>
+                      <button type="submit" class="btn btn-warning">
+	                    <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                      </button>
                   </td>
                   <td>{{item.compnos}}</td>
                   <td>{{item.naturecode}}</td>
