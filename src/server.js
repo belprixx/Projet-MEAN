@@ -101,16 +101,22 @@ app.get('/api/showAll', function(req, res) {
 
 //Chercher
 app.post('/api/search', function(req, res) {
-    var query = req.body;
+    var key = req.body.crimeKey;
+    var value = req.body.crimeValue;
+    var query = {};
+    query[key] = value;
+    console.log(query);
     Crime.find(query ,function (err, data) {
         if (err) res.json(err);
         res.json(data);
+        //console.log(data);
     });
 });
 
 //Chercher et supprimer
 app.post('/api/delete', function(req, res) {
     var query = req.body;
+    console.log(query);
     Crime.find(query).remove().exec();
     res.json('Deleted');
 });

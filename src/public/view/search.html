@@ -47,37 +47,33 @@
 
 
     <div>
-    <select class="search_select">
-        <option>ALL</option>
-        <option>ID</option>
-        <option>COMPNOS</option>
-        <option>NATURECODE</option>
-        <option>INCIDENTS</option>
-        <option>CRIME CODE</option>
-        <option>DISTRICT</option>
-        <option>AREA</option>
-        <option>DATE</option>
-        <option>WEAPON</option>
-        <option>SHOOTING</option>
-        <option>DOMESTIC</option>
-        <option>SHIFT</option>
-        <option>YEAR</option>
-        <option>MONTH</option>
-        <option>DAY_WEEK</option>
-        <option>UCRPART</option>
-        <option>X</option>
-        <option>Y</option>
-        <option>STREETNAME</option>
-        <option>XSTREETNAME</option>
-        <option>LOCATION</option>
-    </select>
+            <select class="" name="key" ng-model="key">
+                <option value="">ALL</option>
+                <option value="_id">ID</option>
+                <option value="compnos">COMPNOS</option>
+                <option value="naturecode">NATURECODE</option>
+                <option value="incident_type_description">INCIDENTS</option>
+                <option value="main_crimecode">CRIME CODE</option>
+                <option value="repdistrict">DISTRICT</option>
+                <option value="reportingarea">AREA</option>
+                <option value="fromdate">DATE</option>
+                <option value="weapontype">WEAPON</option>
+                <option value="shooting">SHOOTING</option>
+                <option value="domestic">DOMESTIC</option>
+                <option value="shift">SHIFT</option>
+                <option value="year">YEAR</option>
+                <option value="month">MONTH</option>
+                <option value="day_week">DAY_WEEK</option>
+                <option value="ucrpart">UCRPART</option>
+                <option value="x">X</option>
+                <option value="y">Y</option>
+                <option value="streetname">STREETNAME</option>
+                <option value="xstreetname">XSTREETNAME</option>
+                <option value="location">LOCATION</option>
+            </select>
 
-
-    <!--		<form class="search_input" action="">
-        <input type="text" placeholder="value">
-        <input type="submit" value="Submit">
-    </form>		-->
-
+            <input type="text" placeholder="value" name="value" ng-model="value">
+            <input type="submit" value="Submit" ng-click="searchCrime(key,value)">
 
 
     </div>
