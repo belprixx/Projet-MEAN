@@ -44,7 +44,7 @@
 	</div>
 </div>
 
-	<div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type)" close="closeAlert($index)">{{alert.msg}}</div> 
+	<div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type)" close="closeAlert($index)">{{alert.msg}}</div>
 
 
 
@@ -115,7 +115,7 @@
               <tr ng-repeat="item in filtereditems">
                   <td>
                       {{item._id}}
-                          <button type="submit" class="btn btn-danger" ng-click="deletedCrime(item._id)">
+                          <button type="submit" class="btn btn-danger" ng-click="deletedCrime(item._id)" ng-if="isAdmin">
                               <span class="glyphicon glyphicon-trash"></span>
                           </button>
                   </td>

@@ -43,11 +43,21 @@ angular.module('BostonApp').factory('userFactory', ['localStorageService',
 		};
 
 		userEntity.isAdmin = function () {
-			return (userEntity.userRole == 'chef de la police')
+				if(userEntity.userRole === 'chef de la police' | userEntity.userRole === 'admin'){
+					return true;
+				}
+				else {
+					return false;
+				}
 		}
 
 		userEntity.isStaff = function () {
-			return (userEntity.userRole == 'chef de la police' || userEntity.userRole == 'Detective')
+			if (userEntity.userRole == 'chef de la police' | userEntity.userRole == 'Detective' | userEntity.userRole === 'admin') {
+					return true;
+			}
+			else {
+				return false;
+			}
 		}
 
 		userEntity.getUsername = function() {

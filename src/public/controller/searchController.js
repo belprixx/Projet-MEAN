@@ -1,6 +1,7 @@
-angular.module('BostonApp').controller('searchController', function ($scope, $http, $timeout, $route) {
+angular.module('BostonApp').controller('searchController', function ($scope, $http, $timeout, $route, userFactory) {
 
-	var test = "";
+	$scope.isAdmin = userFactory.isAdmin();
+
 
 	$http.get("/api/showAll")
 		.then(function(response) {
