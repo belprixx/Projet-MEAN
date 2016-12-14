@@ -59,6 +59,14 @@ angular.module('BostonApp').factory('userFactory', ['localStorageService',
 				return false;
 			}
 		}
+		userEntity.isUser = function() {
+			if (userEntity.userRole == 'agent') {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
 
 		userEntity.getUsername = function() {
 			return userEntity.username;

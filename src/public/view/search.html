@@ -70,9 +70,9 @@
                       <button type="submit" class="btn btn-danger" ng-click="deletedCrime(item._id)" ng-if="isAdmin">
                         <span class="glyphicon glyphicon-trash"></span>
                       </button>
-                      <button type="submit" class="btn btn-warning">
-	                    <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
-                      </button>
+                      <a href="#/user/update/{{item._id}}" class="btn btn-warning" ng-if="isStaff">
+	                    	<span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+											</a>
                   </td>
                   <td>{{item.compnos}}</td>
                   <td>{{item.naturecode}}</td>
