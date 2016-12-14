@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var crimeSchema = new Schema({
     compnos: Number,
     naturecode: String,
-    incident_type_description: { type: String, required: true, unique: false },
+    incident_type_description: String,
     main_crimecode: String,
     reptdistrict: String,
     reportingarea: Number,

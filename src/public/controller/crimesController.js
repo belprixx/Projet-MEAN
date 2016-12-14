@@ -38,8 +38,7 @@ angular.module('BostonApp').controller('crimesController', function ($scope, $ht
       alert('Invalide');
     }
   };
-
-  //
+  
 
   $scope.submitUpdateForm = function(form) {
     if (form.$valid) {
