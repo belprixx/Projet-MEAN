@@ -39,8 +39,6 @@ angular.module('BostonApp').controller('crimesController', function ($scope, $ht
     }
   };
 
-  ///!!!!!\ MODIFIER FONCTIONS EN DESSOUS POUR UPDATE
-  //
   //
 
   $scope.submitUpdateForm = function(form) {
