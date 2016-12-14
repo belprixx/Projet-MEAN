@@ -1,4 +1,30 @@
-angular.module('BostonApp').controller('searchController', function ($scope, $http) {
+angular.module('BostonApp').controller('searchController', function ($scope, $http, $timeout, $route, userFactory) {
+
+	$scope.isAdmin = userFactory.isAdmin();
+	$scope.isStaff = userFactory.isStaff();
+
+	$scope.deletedCrime = function (id_crime) {
+		var data = $.param ({
+			_id: id_crime
+		});
+
+		$http({
+			url: "/api/delete", method:'POST',
+			data: data,
+			headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
+		}).then(
+				function(response){
+					if (response.data === 'Deleted') {
+					$scope.alerts = [
+						{ type: 'success', msg: "Le crime a été supprimer" },
+					];
+					$timeout(function() {
+						$route.reload();
+					}, 3000);
+				}
+			}
+		);
+	};
 
 	$http.get("/api/showAll")
 		.then(function(response) {
@@ -76,5 +102,7 @@ angular.module('BostonApp').controller('searchController', function ($scope, $ht
 			);
 		}
 	}
+
+	
 
 });
