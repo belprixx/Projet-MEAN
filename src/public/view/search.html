@@ -36,7 +36,7 @@
     </div>
     <div>
     <div class="table-responsive">
-    <table class="table_crime">
+    <table class="table_crime table-striped">
         <thead>
             <tr>
                 <th>ID</th>
@@ -67,10 +67,10 @@
                   <td>
                       {{item._id}}
 											<br>
-                      <button type="submit" class="btn btn-danger" ng-click="deletedCrime(item._id)" ng-if="isAdmin">
+                      <button type="submit" class="btn btn-secondary" ng-click="deletedCrime(item._id)" ng-if="isAdmin">
                         <span class="glyphicon glyphicon-trash"></span>
                       </button>
-                      <a href="#/user/update/{{item._id}}" class="btn btn-warning" ng-if="isStaff">
+                      <a href="#/user/update/{{item._id}}" class="btn btn-secondary" ng-if="isStaff">
 	                    	<span class="fa fa-pencil-square-o" aria-hidden="true"></span>
 											</a>
                   </td>

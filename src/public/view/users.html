@@ -4,7 +4,7 @@
 
   <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type)" close="closeAlert($index)">{{alert.msg}}</div>
 
-<table class="table_users">
+<table class="table_users table-striped">
     <thead>
         <tr>
             <th></th>
@@ -15,7 +15,7 @@
     <tbody>
           <tr ng-repeat="user in userList" ng-if="!user.enable">
             <td>
-                <button type="submit" class="btn btn-danger" ng-click="Deleted(user._id)">
+                <button type="submit" class="btn btn-secondary" ng-click="Deleted(user._id)">
                       <span class="glyphicon glyphicon-trash"></span>
                 </button>
             </td>
