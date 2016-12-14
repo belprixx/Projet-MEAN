@@ -121,6 +121,11 @@ app.post('/api/delete', function(req, res) {
     res.json('Deleted');
 });
 
+
+
+
+
+
 //Créer
 app.post('/api/add', function(req, res) {
     var createCrime = new Crime({
