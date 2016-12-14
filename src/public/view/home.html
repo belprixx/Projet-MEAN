@@ -1,57 +1,7 @@
-<div ng-app="nav_com">
-  <div class="bar_lat_gauche" >
-    <!--<a href="#/">Home</a>-->
-    <!--<a href="#/user/login" ng-if="!connected">Login</a>-->
-<div class="container" ng-controller="headerController">
-	<div class="row">
-		 <div class="wrapper">
-        <!-- Sidebar -->
-            <ul style="margin-left:0;">
-                <li>
-                  <a href="#menu-toggle" style="margin-top:20px;float:right;" >
-                    <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                    <a href="#/Home" ng-if="connected">
-                      <i class="fa fa-home" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/logout" ng-if="connected">
-                      <i class="fa fa-sign-out" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/search">
-                      <i class="fa fa-search" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/crimes">
-                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/user/users" ng-if="connected">
-                      <i class="fa fa-user" aria-hidden="true"></i>
-                      <span style="margin-left: 1em;"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-</a>
 
-<div class="home_center">
 
+<div class="home_center" ng-controller="headerController">
   <h1>{{hello}}</h1>
   <h2>{{grade}}</h2>
-
 </div>
 
-	</div>
-</div>

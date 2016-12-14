@@ -1,6 +1,8 @@
 angular.module('BostonApp').controller('headerController', function($scope, userFactory) {
     $scope.$watch(function() {
-        return userFactory.isSignedIn();
+          $scope.isAdmin = userFactory.isAdmin();
+          $scope.isStaff = userFactory.isStaff();
+          return userFactory.isSignedIn();
     }, function(logged) {
         $scope.hello = 'Hello';
         $scope.grade = 'Grade:'

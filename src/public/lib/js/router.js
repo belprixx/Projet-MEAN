@@ -45,9 +45,9 @@ routeApp.config(function($routeProvider) {
         })
 
         // route for the update page
-        .when('/user/update', {
+        .when('/user/update/:crimeId', {
             templateUrl : '/view/crimeUpdate.html',
-            controller : 'crimesController'
+            controller : 'crimesUpdateController'
         })
 
         // route for the home page

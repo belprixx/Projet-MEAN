@@ -99,6 +99,18 @@ app.get('/api/showAll', function(req, res) {
     });
 });
 
+// Find One by id Crime
+app.post('/api/find/crime', function(req, res){
+  Crime.findById(req.body.id, function(err, data){
+    if(err){
+      res.json(err);
+    }
+    else {
+      res.json(data)
+    }
+  });
+});
+
 //Chercher
 app.post('/api/search', function(req, res) {
     var key = req.body.crimeKey;
@@ -120,6 +132,11 @@ app.post('/api/delete', function(req, res) {
     Crime.find(query).remove().exec();
     res.json('Deleted');
 });
+
+
+
+
+
 
 //Créer
 app.post('/api/add', function(req, res) {
